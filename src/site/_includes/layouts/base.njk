@@ -7,23 +7,40 @@
     <title>{{ title }}</title>
   </head>
   <body class="{{ bodyClass }}" >
-    <div class="container">
-      <header>
-        <ul class="nav">
-          <li>
-            <a href="/">home<small>where the heart is</small></a>
-          </li>
-          <li>
-            <a href="/about">about<small>all about this</small></a>
-          </li>
-        </ul>
-        <h1>{{ title }}</h1>
-        {%- if subtitle %}<p class="subtitle">{{ subtitle }}</p>{% endif %}
+    <div id="waterfall"></div>
+    <div class="wrapper">
+      <header class="header">
+        {# <div id="navbar">
+          <h1 class="home">
+            <a href="{{ '/' | url }}">
+              <div id='homan-img-container'></div>
+              {{ metadata.title }}
+            </a>
+          </h1>
+          <ul class="nav">
+            {%- for nav in collections.nav | reverse -%}
+            <li class="nav-item{% if nav.url == page.url %} nav-item-active{% endif %}"><a href="{{ nav.url | url }}">{{ nav.data.navtitle }}</a></li>
+            {%- endfor -%}
+          </ul>
+        </div> #}
+        <h1>homan.io</h1>
+        <h2>The Ramblings of Derek Homan</h2>
+        <h3>programmer, nerd, human</h3>
+        <div id="filler" class="filler"></div>
       </header>
-      {{ content | safe }}
+      <nav class="sidebar-nav">
+        <ul class="nav">
+          {%- for nav in collections.nav | reverse -%}
+          <li class="nav-item{% if nav.url == page.url %} nav-item-active{% endif %}"><a href="{{ nav.url | url }}">{{ nav.data.navtitle }}</a></li>
+          {%- endfor -%}
+        </ul>
+      </nav>
+      <article{% if templateClass %} class="main content {{ templateClass }}"{% endif %}>
+        {{ content | safe }}
+      </article>
       {% include "footer.njk" %}
-      <script>{% include "js/scripts.js" %}</script>
     </div>
+    <script>{% include "js/scripts.js" %}</script>
   </body>
 </html>
 

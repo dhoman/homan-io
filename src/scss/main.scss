@@ -1,196 +1,335 @@
-@import '_variables';
-@import '_mixins';
-
+:root {
+  --red: #C5004A;
+  --darkred: #7F0036;
+  --lightgray: #e0e0e0;
+  --gray: #C0C0C0;
+  --navy: #00449E;
+  --white: #fff;
+  --moon-gray: #CCCCCC;
+  --near-black: #111111;
+  --black: #000000;
+  --blue: #357EDD;
+  --light-blue: #96CCFF;
+  --near-white: #F4F4F4;
+}
 * {
+  box-sizing: border-box;
+}
+html,
+body {
+  padding: 0;
   margin: 0;
+  font-family: sans-serif;
+  color: var(--near-white);
+  background-color: var(--near-black);
+}
+p:last-child {
+  margin-bottom: 0;
+}
+p,
+.tmpl-post li,
+img {
+  max-width: 37.5em; /* 600px /16 */
+}
+p,
+.tmpl-post li {
+  line-height: 1.45;
+}
+a[href] {
+  color: var(--blue);
+}
+a[href]:visited {
+  color: var(--blue);
+}
+pre,
+code {
+  font-family: Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace;
+  line-height: 1.5;
+}
+pre {
+  font-size: 14px;
+  line-height: 1.375;
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  -moz-tab-size: 2;
+  -o-tab-size: 2;
+  tab-size: 2;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+  padding: 1em;
+  margin: .5em 0;
+  background-color: #f6f6f6;
+}
+
+/* Header */
+.home {
+  padding: 0 1rem;
+  float: left;
+  margin: 1rem 0; /* 16px /16 */
+  font-size: 1em; /* 16px /16 */
+}
+.home :link:not(:hover) {
+  text-decoration: none;
+}
+
+
+/* Nav */
+.nav {
+  padding: 0;
+  list-style: none;
+  float: left;
+  margin-left: 1em;
+}
+.nav-item a, .home {
+  background: rgba(0, 0, 0, .5);
+  text-shadow: -1px 0 var(--white), 0 1px var(--white), 1px 0 var(--white), 0 -1px var(--white);
+}
+.nav-item {
+  display: inline-block;
+  margin-right: 1em;
+  color: var(--black);
+}
+.nav-item a[href]:hover {
+  background-color: transparent;
+}
+.nav-item a[href]:not(:hover) {
+  text-decoration: none;
+}
+.nav-item a[href]:visited {
+  color: var(--black);
+}
+.nav-item-active {
+  font-weight: 700;
+  text-decoration: underline;
+  color: var(--blue);
+}
+
+/* Posts list */
+.postlist {
+  list-style: none;
   padding: 0;
 }
-
-::-moz-selection {
-  background-color: $text-color;
-  color: $page-color;
+.postlist-item {
+  counter-increment: start-from -1;
 }
-::selection {
-  background-color: $text-color;
-  color: $page-color;
+.postlist-item:before {
+  display: inline-block;
+  pointer-events: none;
+  content: "" counter(start-from, decimal-leading-zero) ". ";
+  line-height: 100%;
+  text-align: right;
 }
-
-html {
-  background-color: $accent-color;
+.postlist-date,
+.postlist-item:before {
+  font-size: 0.8125em; /* 13px /16 */
+  color: var(--moon-gray);
 }
-
-body {
-  text-align: center;
-  background-color: $page-color;
-  color: mix($text-color, $page-color, 60%);
-  font-family: sans-serif;
-  font-weight: 300;
-  font-size: 16px;
-  line-height: 1.8;
-  min-height: 100vh;
-  background-image: url('/images/bg-grid.png');
-  @include bp(mid) {
-    font-size: 18px;
-  }
+.postlist-date {
+  word-spacing: -0.5px;
 }
-
-
-.container {
-  margin-left: auto;
-  margin-right: auto;
-  width: 90%;
-  text-align: left;
-  @include bp(mid) {
-    width: 600px;
-  }
-  @include bp(wide) {
-    width: 700px;
-  }
+.postlist-link {
+  display: inline-block;
+  padding: 0.25em 0.1875em; /* 4px 3px /16 */
+}
+.postlist-item-active .postlist-link {
+  font-weight: bold;
+}
+.tmpl-home .postlist-link {
+  font-size: 1.1875em; /* 19px /16 */
+  font-weight: 700;
 }
 
 
-h1, h2, h3 {
-  color: $text-color;
-  font-weight: 600;
-  margin-top: 2em;
-  margin-bottom:0.2em;
-  line-height: 1;
-}
-h1 {
-  font-size: 3em;
-  margin-top:0.4em;
-  margin-bottom:0.2em;
-  line-height: 1;
-
-  @include bp(mid) {
-    font-size: 5em;
-  }
-  @include bp(wide) {
-    font-size: 6em;
-  }
-}
-
-p {
-  margin-top: 1em;
-  margin-bottom: 1em;
-}
-
-.subtitle {
-  font-size: 1.2em;
-  margin-top: 1em;
-  margin-bottom: 5em;
-}
-
-ul, ol {
-  padding-left: 1em;
-}
-
-a:link,
-a:visited {
-  color: $text-color;
+/* Tags */
+.tag {
+  display: inline-block;
+  vertical-align: text-top;
+  text-transform: uppercase;
+  font-size: 0.625em; /* 10px /16 */
+  padding: 2px 4px;
+  margin-left: 0.8em; /* 8px /10 */
+  background-color: var(--red);
+  color: var(--white);
+  border-radius: 0.25em; /* 3px /12 */
   text-decoration: none;
-  border-bottom: solid 1px mix($text-color, $page-color, 10%);
 }
-a:hover,
-a:focus {
-  color: $text-color;
-  border-bottom: solid 1px $text-color;
+a[href].tag,
+a[href].tag:visited {
+  color: #fff;
 }
 
-
-.nav {
-  padding-top: 3em;
-
-  li {
-    display: inline;
-  }
-
-  a:link,
-  a:visited {
-    display: inline-block;
-    border-top: solid 1px mix($text-color,$page-color, 60%);
-    border-bottom-style: none;
-    padding-top: 0.8em;
-    padding-bottom: 2em;
-    margin-left: 0;
-    margin-right: 0.7em;
-    width: 8em;
-    text-align: left;
-    color: mix($text-color,$page-color, 80%);
-    text-decoration: none;
-  }
-  a:hover,
-  a:focus {
-      color: $text-color;
-      border-top: solid 1px $accent-color;
-      border-bottom-style: none;
-  }
-
-  small {
-    display: block;
-    font-size: 0.7em;
-    color: mix($text-color,$page-color, 60%);
-  }
+/* Warning */
+.warning {
+  background-color: #ffc;
+  padding: 1em 0.625em; /* 16px 10px /16 */
+}
+.warning ol:only-child {
+  margin: 0;
 }
 
-
-code {
-  font-size: 0.8em;
-  background-color:  mix($accent-color, $page-color, 20%);
-  color: $text-color;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 6px;
-  padding-right: 6px;
-  white-space: nowrap;
+/* Direct Links / Markdown Headers */
+.direct-link {
+  font-family: sans-serif;
+  text-decoration: none;
+  font-style: normal;
+  margin-left: .1em;
+}
+a[href].direct-link,
+a[href].direct-link:visited {
+  color: transparent;
+}
+a[href].direct-link:focus,
+a[href].direct-link:focus:visited,
+:hover > a[href].direct-link,
+:hover > a[href].direct-link:visited {
+  color: #aaa;
 }
 
-.date {
-  font-size: 0.8em;
-  font-style: italic;
+/* my classes */
+
+
+.content {
+  background-color: var(--near-black);
+  color: var(--near-white);
+  z-index: 2;
+  margin: 0 auto 0;
 }
 
-main {
-  margin-top: 4em;
-}
+/* 
+.nav-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  position: relative;
+}*/ 
+/* background: rgba(0, 0, 0, 0.2); */
 
-pre {
-  margin-top: 2em;
-  margin-bottom: 2em;
-  padding-top: 1em;
-  padding-bottom: 1em;
-  padding-left: 2em;
-  padding-right: 2em;
-  line-height: 1.2;
-  background-color:  mix($accent-color, $page-color, 10%);
-  border: solid 1px mix($accent-color, $page-color, 30%);
-  overflow: auto;
-  code {
-    border-style: none;
-    padding-top: 0;
-    padding-bottom: 0;
-    padding-left: 0;
-    padding-right: 0;
+/* .sticky + .content {
+  padding-top: 60px;
+} */
+/* 
+.main {
+  min-height: 200px;
+} 
+*/
+
+#filler.filler {
+  height: 200px;
+  background-color: transparent;
+}
+@media (min-height: 300px) {
+  nav ul {
+    position: sticky;
+    top: 0;
   }
 }
+#waterfall {
+  position: fixed;
+  top: 0px;
+  width: 1024px;
+  /* background-image: url(../img/waterfall.jpg); */
+  background-size: auto 600px;
+  background-position: top center;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+#waterfall img {
+  position: fixed;
+  z-index: 1;
+}
 
 
-footer {
-  margin-top: 6em;
-  padding-top: 4em;
-  padding-bottom: 6em;
-  border-top: solid 1px mix($text-color, $page-color, 10%);
-  font-size: 0.7em;
-  color: mix($text-color, $page-color, 40%);
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+/* 
+body {
+  margin: 40px;
+  font-family: 'Open Sans', 'sans-serif';
+  background-color: #fff;
+  color: #444;
+}
+*/
 
-  a:link,
-  a:visited {
-    color: mix($text-color, $page-color, 70%);
-    border-bottom: solid 1px mix($accent-color, $page-color, 70%);
+h1, p {
+  margin: 0 0 1em 0;
+} 
+
+.wrapper {
+  max-width: 940px;
+  margin: 0 20px;
+  display: grid;
+  grid-gap: 10px;
+  z-index: 2;
+}
+
+@media screen and (min-width: 600px) {
+
+  /* no grid support? */
+  .sidebar-nav {
+    float: left;
+    width: 19.1489%;
   }
-  a:hover,
-  a:focus {
-    color: $accent-color;
-    border-bottom: solid 1px $text-color;
+
+  .content {
+    float: right;
+    width: 79.7872%;
+  }
+
+  .wrapper {
+    margin: 0 auto;
+    grid-template-columns: [sidebar] 1fr [content] 3fr;
+    grid-auto-rows: minmax(150px, auto);
+  }
+
+  .header, .footer {
+    grid-column: 1 / -1;
+    /* needed for the floated layout */
+    clear: both;
+  }
+
+  .header h1, .header h2, .header h3{
+    padding: 4px 8px;
+    background: rgba(0, 0, 0, .75);
+    width: fit-content;
+  }
+
+  .sidebar-nav {
+    grid-column: sidebar;
+  }
+
+  .content {
+    grid-column: content;
+    grid-row: 2 auto;
+  }
+}
+
+@media (min-height: 300px) {
+  nav ul {
+    position: sticky;
+    top: 0;
+  }
+}
+
+.wrapper > * {
+  /* border-radius: 5px; */
+  padding: 20px;
+  font-size: 150%;
+  /* needed for the floated layout*/
+  margin-bottom: 10px;
+  z-index: 2;
+}
+
+/* We need to set the widths used on floated items back to auto, and remove the bottom margin as when we have grid we have gaps. */
+@supports (display: grid) {
+  .wrapper > * {
+    width: auto;
+    margin: 0;
   }
 }
