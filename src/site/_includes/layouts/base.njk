@@ -35,7 +35,7 @@
           {%- endfor -%}
         </ul>
       </nav>
-      <article{% if templateClass %} class="main content {{ templateClass }}"{% endif %}>
+      <article {% if templateClass %} class="main content {{ templateClass }}"{% endif %}>
         {{ content | safe }}
       </article>
       {% include "footer.njk" %}

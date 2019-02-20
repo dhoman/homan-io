@@ -108,4 +108,6 @@
     quality:    50,
     seed:       25
   };
-  glitchImage(params)
+  window.onload = function() {
+    glitchImage(params);
+  }

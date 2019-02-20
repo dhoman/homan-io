@@ -241,7 +241,7 @@ a[href].direct-link:focus:visited,
 #waterfall img {
   position: fixed;
   background-size: auto 600px;
-  background-position: top center;
+  background-position: center top;
   background-attachment: fixed;
   z-index: 1;
 }
@@ -261,7 +261,7 @@ body {
 
 h1, p {
   margin: 0 0 1em 0;
-} 
+}
 
 .wrapper {
   max-width: 940px;
@@ -269,6 +269,12 @@ h1, p {
   display: grid;
   grid-gap: 10px;
   z-index: 2;
+}
+
+.header h1, .header h2, .header h3{
+  padding: 4px 8px;
+  background: rgba(0, 0, 0, .75);
+  width: fit-content;
 }
 
 @media screen and (min-width: 600px) {
@@ -294,12 +300,6 @@ h1, p {
     grid-column: 1 / -1;
     /* needed for the floated layout */
     clear: both;
-  }
-
-  .header h1, .header h2, .header h3{
-    padding: 4px 8px;
-    background: rgba(0, 0, 0, .75);
-    width: fit-content;
   }
 
   .sidebar-nav {

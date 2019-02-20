@@ -5,6 +5,7 @@ date: 2019-02-02
 tags:
   - idk
 layout: layouts/post.njk
+bg-image: panda.jpeg
 ---
 
 ## Purpose
