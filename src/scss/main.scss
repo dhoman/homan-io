@@ -234,13 +234,13 @@ a[href].direct-link:focus:visited,
   top: 0px;
   width: 1024px;
   /* background-image: url(../img/waterfall.jpg); */
-  background-size: auto 600px;
-  background-position: top center;
-  background-attachment: fixed;
   overflow: hidden;
 }
 #waterfall img {
   position: fixed;
+  background-size: auto 600px;
+  background-position: top center;
+  background-attachment: fixed;
   z-index: 1;
 }
 
