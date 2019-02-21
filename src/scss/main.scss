@@ -85,7 +85,6 @@ pre {
   padding: 0;
   list-style: none;
   float: left;
-  margin-left: 1em;
 }
 ul.nav li.nav-item a, .home {
   background: rgba(0, 0, 0, .75);
@@ -198,19 +197,23 @@ a[href].direct-link:focus:visited,
 /* my classes */
 
 
-.content p, .content h1, .content h2, .content h3, .content ul, .content li, .visible-contrast {
+.content p, .content h1, .content h2, .content h3, .content ul, .content li {
   background-color: var(--near-black);
   color: var(--near-white);
   z-index: 2;
-  margin: 8px 12px;
   padding: 5px 10px;
+}
+
+.visible-contrast {
+  background-color: var(--near-black);
+  color: var(--near-white);
+  z-index: 2;
 }
 
 .footer p, .footer span {
   background-color: var(--near-black);
   color: var(--near-white);
   z-index: 2;
-  margin: 8px 12px;
   padding: 3px 6px;
 }
 /* 
