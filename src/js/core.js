@@ -57,10 +57,12 @@
     }, Math.random() * 10000);
   }
 
-  var waterfallContainerEl = document.getElementById( 'waterfall' );
-  
+  var glitchBgContainerEl = document.getElementById( 'glitch-bg' );
+  var glitchImgWidth = 0;
   function glitchImage(params) {
       console.log('glitchParams: ' + JSON.stringify(params));
+      var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+      var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
       latestGlitch = Date.now();
       loadImage( imagePath, function ( img ) {
         glitch( params )
@@ -68,16 +70,20 @@
           .toDataURL()
           .then( function( dataURL ) {
             var imageEl = new Image();
-            //imageEl.class = 'waterfall';
             imageEl.src = dataURL;
-            //$('.waterfall').replaceWith( imageEl );
-            //$('.waterfall').css('background-image',  'url('+dataURL+')');
-            //var imageEl = new Image();
-            //imageEl.src = dataURL;
-            if(waterfallContainerEl.childNodes.length) {
-              waterfallContainerEl.replaceChild(imageEl, waterfallContainerEl.childNodes[0]);
+            // the new image doesn't always have a width... so store it
+            if (glitchImgWidth === 0 && imageEl.width) {
+              glitchImgWidth = imageEl.width;
+            }
+            // if viewport is small, let's center the img
+            if (w < glitchImgWidth) {
+              imageEl.style.right = '-' + (glitchImgWidth - w )/ 2 + 'px';
+              // console.log(imageEl.style);
+            }
+            if(glitchBgContainerEl.childNodes.length) {
+              glitchBgContainerEl.replaceChild(imageEl, glitchBgContainerEl.childNodes[0]);
             } else {
-              waterfallContainerEl.appendChild(imageEl);
+              glitchBgContainerEl.appendChild(imageEl);
             }
           });
       });
@@ -85,8 +91,8 @@
 
   addEvent(window, 'scroll', function(event) {
     var y = getScrollY();
-    if (Math.abs(lastestY - y) > 50) {
-      lastestY = y;
+    if (Math.abs(latestY - y) > 50) {
+      latestY = y;
       var sin = Math.sin(y);
       var cos = Math.cos(y);
       var tempParams = {
@@ -98,8 +104,7 @@
       glitchImage(tempParams);
     }
   });
-  setTimeoutForGlitch();
-  var lastestY = 0;
+  var latestY = 0;
   var latestGlitch = Date.now();
 
   var params = {
@@ -110,4 +115,5 @@
   };
   window.onload = function() {
     glitchImage(params);
+    setTimeoutForGlitch();
   }

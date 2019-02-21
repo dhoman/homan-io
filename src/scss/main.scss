@@ -88,21 +88,24 @@ pre {
   margin-left: 1em;
 }
 .nav-item a, .home {
-  background: rgba(0, 0, 0, .5);
-  text-shadow: -1px 0 var(--white), 0 1px var(--white), 1px 0 var(--white), 0 -1px var(--white);
+  background: rgba(0, 0, 0, .75);
+  color: var(--white);
+  font-weight: bold;
+  padding: 4px 4px;
 }
 .nav-item {
-  display: inline-block;
+  display: flex;
   margin-right: 1em;
   color: var(--black);
-}
-.nav-item a[href]:hover {
-  background-color: transparent;
 }
 .nav-item a[href]:not(:hover) {
   text-decoration: none;
 }
 .nav-item a[href]:visited {
+  color: var(--white);
+}
+.nav-item a[href]:hover {
+  background: rgba(255, 255, 255, .75);
   color: var(--black);
 }
 .nav-item-active {
@@ -195,13 +198,21 @@ a[href].direct-link:focus:visited,
 /* my classes */
 
 
-.content {
+.content p, .content h1, .content h2, .content h3, .content ul, .content li {
   background-color: var(--near-black);
   color: var(--near-white);
   z-index: 2;
-  margin: 0 auto 0;
+  margin: 8px 12px;
+  padding: 3px 6px;
 }
 
+.footer p, .footer span {
+  background-color: var(--near-black);
+  color: var(--near-white);
+  z-index: 2;
+  margin: 8px 12px;
+  padding: 3px 6px;
+}
 /* 
 .nav-container{
   display: flex;
@@ -225,24 +236,17 @@ a[href].direct-link:focus:visited,
   height: 200px;
   background-color: transparent;
 }
-@media (min-height: 300px) {
-  nav ul {
-    position: sticky;
-    top: 0;
-  }
-}
-#waterfall {
+
+#glitch-bg {
   position: fixed;
   top: 0px;
-  width: 1024px;
+  // width: 1024px;
   /* background-image: url(../img/waterfall.jpg); */
   overflow: hidden;
 }
-#waterfall img {
+#glitch-bg img {
   position: fixed;
-  background-size: auto 600px;
-  background-position: center top;
-  background-attachment: fixed;
+  // width: 1024px;
   z-index: 1;
 }
 
@@ -250,14 +254,6 @@ a[href].direct-link:focus:visited,
 *, *:before, *:after {
   box-sizing: border-box;
 }
-/* 
-body {
-  margin: 40px;
-  font-family: 'Open Sans', 'sans-serif';
-  background-color: #fff;
-  color: #444;
-}
-*/
 
 h1, p {
   margin: 0 0 1em 0;
@@ -322,7 +318,6 @@ h1, p {
 .wrapper > * {
   /* border-radius: 5px; */
   padding: 20px;
-  font-size: 150%;
   /* needed for the floated layout*/
   margin-bottom: 10px;
   z-index: 2;
