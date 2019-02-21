@@ -81,6 +81,7 @@ function glitchImage(params) {
             // console.log(imageEl.style);
           }
           if(glitchBgContainerEl.childNodes.length) {
+            // we have to remove and replace the image element because if we simply updated the data url there'd be a memory leak
             glitchBgContainerEl.replaceChild(imageEl, glitchBgContainerEl.childNodes[0]);
           } else {
             glitchBgContainerEl.appendChild(imageEl);
