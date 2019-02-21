@@ -89,6 +89,7 @@ pre {
 ul.nav li.nav-item a, .home {
   background: rgba(0, 0, 0, .75);
   color: var(--white);
+  border: 1px solid transparent;
   font-weight: bold;
   padding: 5px 10px;
 }
