@@ -1,8 +1,13 @@
-# EleventyOne
+# homan.io
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/056b4a67-70e6-4af4-9be5-dee151b8e906/deploy-status)](https://app.netlify.com/sites/eleventyone/deploys)
+This repo was really spun out of two other base 11ty projects, so before I get too far
 
-Phil's first port of call when starting another project using Eleventy.
+## Major Props
+- [EleventyOne](https://github.com/philhawksworth/eleventyone)
+- [Eleventy](https://github.com/11ty/eleventy) 
+- [eleventy-base-blog](https://github.com/11ty/eleventy-base-blog)
+- [@philhawksworth](https://twitter.com/philhawksworth)
+- [@zachleat](https://twitter.com/zachleat)
 
 This project scaffold includes:
 
@@ -10,17 +15,14 @@ This project scaffold includes:
 - A date format filter for Nunjucks
 - Sass pipeline
 - JS pipeline
-- Serverless (FaaS) development pipeline with Netlify Functions for Lambda
-
-
-![Eleventy screenshot](./eleventyone-template.png)
+- Serverless (FaaS) development pipeline with Netlify Functions for Lambda (I'm not using, but it's there)
 
 
 ## Instructions
 
 To get your own instance of this 11ty starter project cloned and deploying to Netlify very quickly, just click the button below and follow the instructions.
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/philhawksworth/eleventyone)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/dhoman/homan-io)
 
 
 ## Wait, what happens when I click that button?
@@ -39,16 +41,17 @@ To build the site you need:
 - [Node](https://nodejs.org) - to run the build
 - [Yarn](https://yarnpkg.com) - to install and manage dependencies
 
+* note, when I've tried development on windows the yarn start command hangs after the gulp command and doesn't execute the eleventy --serve command (I got around it by using two terminals and running the two commands in separate terminals)
 
 ### Getting started
 
 ```bash
 
 # clone this repository
-git clone git@github.com:philhawksworth/eleventyone.git
+git clone git@https://github.com/dhoman/homan-io
 
 # go to the working directory
-cd eleventyone
+cd homan-io
 
 # install dependencies
 yarn
@@ -56,5 +59,3 @@ yarn
 # start a local build server with hot reloading
 yarn start
 ```
-
-
