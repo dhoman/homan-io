@@ -314,7 +314,7 @@ header.header {
   }
 
   .wrapper {
-    margin: 0 auto;
+    margin: 0px 10px;
     grid-template-columns: [sidebar] 1fr [content] 3fr;
     grid-auto-rows: minmax(150px, auto);
   }
