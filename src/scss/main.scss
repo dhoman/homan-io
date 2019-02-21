@@ -107,6 +107,7 @@ a[href]:visited {
   background: transparent;
   color: var(--black);
   text-shadow: 1px 1px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+  border: 1px solid var(--black);
 }
 .nav-item-active {
   font-weight: 700;
