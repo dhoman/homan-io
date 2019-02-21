@@ -60,11 +60,10 @@ function setTimeoutForGlitch() {
 var glitchBgContainerEl = document.getElementById( 'glitch-bg' );
 var glitchImgWidth = 0;
 function glitchImage(params) {
-    console.log('glitchParams: ' + JSON.stringify(params));
+    // console.log('glitchParams: ' + JSON.stringify(params));
     var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
     var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
     latestGlitch = Date.now();
-    console.log(dw_getWindowDims());
     loadImage( imagePath, function ( img ) {
       glitch( params )
         .fromImage( img )
@@ -115,22 +114,6 @@ var params = {
   seed:       25
 };
 
-function dw_getWindowDims() {
-  var doc = document, w = window;
-  var docEl = (doc.compatMode && doc.compatMode === 'CSS1Compat')?
-          doc.documentElement: doc.body;
-  
-  var width = docEl.clientWidth;
-  var height = docEl.clientHeight;
-  
-  // mobile zoomed in?
-  if ( w.innerWidth && width > w.innerWidth ) {
-      width = w.innerWidth;
-      height = w.innerHeight;
-  }
-  
-  return {width: width, height: height};
-}
 window.onload = function() {
   glitchImage(params);
   setTimeoutForGlitch();
