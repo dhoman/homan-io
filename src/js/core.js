@@ -90,32 +90,47 @@ function glitchImage(params) {
     });
 }
 
-addEvent(window, 'scroll', function(event) {
-  var y = getScrollY();
-  if (Math.abs(latestY - y) > 50) {
-    latestY = y;
-    var sin = Math.sin(y);
-    var cos = Math.cos(y);
-    var tempParams = {
-      amount: scale(sin, -1, 1, 10, 60),
-      iterations: scale(cos, -1, 1, 5, 35),
-      quality: scale(sin, -1, 1, 10, 60),
-      seed: scale(sin, -1, 1, 0, 100)
-    }
-    glitchImage(tempParams);
-  }
+// addEvent(window, 'scroll', function(event) {
+//   var y = getScrollY();
+//   if (Math.abs(latestY - y) > 50) {
+//     latestY = y;
+//     var sin = Math.sin(y);
+//     var cos = Math.cos(y);
+//     var tempParams = {
+//       amount: scale(sin, -1, 1, 10, 60),
+//       iterations: scale(cos, -1, 1, 5, 35),
+//       quality: scale(sin, -1, 1, 10, 60),
+//       seed: scale(sin, -1, 1, 0, 100)
+//     }
+//     glitchImage(tempParams);
+//   }
+// });
+addEvent(window, 'blur', function(event) {
+  var temp = {
+    amount:     scale(Math.random(), 0, 1, 10, 60),
+    iterations: scale(Math.random(), 0, 1, 5, 35),
+    quality:    scale(Math.random(), 0, 1, 10, 60),
+    seed:       scale(Math.random(), 0, 1, 0, 100)
+  };
+  glitchImage(temp);
 });
 var latestY = 0;
 var latestGlitch = Date.now();
 
-var params = {
-  amount:     20,
-  iterations: 40,
-  quality:    50,
-  seed:       25
-};
+// var params = {
+//   amount:     20,
+//   iterations: 40,
+//   quality:    50,
+//   seed:       25
+// };
 
-window.onload = function() {
+addEvent(window, 'onload', function() {
+  var params = {
+    amount:     scale(Math.random(), 0, 1, 10, 60),
+    iterations: scale(Math.random(), 0, 1, 5, 35),
+    quality:    scale(Math.random(), 0, 1, 10, 60),
+    seed:       scale(Math.random(), 0, 1, 0, 100)
+  };
   glitchImage(params);
-  setTimeoutForGlitch();
-}
+  // setTimeoutForGlitch();
+});
