@@ -87,7 +87,7 @@ pre {
   float: left;
   margin-left: 1em;
 }
-.nav-item a, .home {
+ul.nav li.nav-item a, .home {
   background: rgba(0, 0, 0, .75);
   color: var(--white);
   font-weight: bold;
@@ -96,13 +96,13 @@ pre {
 .nav-item {
   display: flex;
   margin-right: 1em;
-  color: var(--black);
 }
 .nav-item a[href]:not(:hover) {
   text-decoration: none;
 }
-.nav-item a[href]:visited {
-  color: var(--white);
+a[href]:visited {
+  background: rgba(255, 255, 255, .75);
+  color: var(--blue);
 }
 .nav-item a[href]:hover {
   background: rgba(255, 255, 255, .75);
@@ -198,7 +198,7 @@ a[href].direct-link:focus:visited,
 /* my classes */
 
 
-.content p, .content h1, .content h2, .content h3, .content ul, .content li {
+.content p, .content h1, .content h2, .content h3, .content ul, .content li, .visible-contrast {
   background-color: var(--near-black);
   color: var(--near-white);
   z-index: 2;
@@ -267,14 +267,38 @@ h1, p {
   z-index: 2;
 }
 
+header.header {
+  padding-top: 20px;
+}
+
 .header h1, .header h2, .header h3{
   padding: 4px 8px;
   background: rgba(0, 0, 0, .75);
   width: fit-content;
 }
+.nav {
+  display: flex;
+  flex-direction: column;
+}
 
-@media screen and (min-width: 600px) {
+@media screen and (max-width: 600px) {
+  .nav {
+    flex-direction: row;
+    margin-bottom: 0px;
+    margin-top: 0px;
+  }
+}
 
+@media screen and (min-width: 601px) {
+  .nav {
+    flex-direction: column;
+  }
+  .nav-item {
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (min-width: 601px) {
   /* no grid support? */
   .sidebar-nav {
     float: left;
@@ -317,7 +341,7 @@ h1, p {
 
 .wrapper > * {
   /* border-radius: 5px; */
-  padding: 20px;
+  padding: 0 20px;
   /* needed for the floated layout*/
   margin-bottom: 10px;
   z-index: 2;
