@@ -41,7 +41,7 @@ To build the site you need:
 - [Node](https://nodejs.org) - to run the build
 - [Yarn](https://yarnpkg.com) - to install and manage dependencies
 
-* note, when I've tried development on windows the yarn start command hangs after the gulp command and doesn't execute the eleventy --serve command (I got around it by using two terminals and running the two commands in separate terminals)
+note: when I've tried development on windows the yarn start command hangs after the gulp command and doesn't execute the eleventy --serve command (I got around it by using two terminals and running the two commands in separate terminals)
 
 ### Getting started
 
