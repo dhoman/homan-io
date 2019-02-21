@@ -91,7 +91,7 @@ ul.nav li.nav-item a, .home {
   background: rgba(0, 0, 0, .75);
   color: var(--white);
   font-weight: bold;
-  padding: 4px 4px;
+  padding: 5px 10px;
 }
 .nav-item {
   display: flex;
@@ -203,7 +203,7 @@ a[href].direct-link:focus:visited,
   color: var(--near-white);
   z-index: 2;
   margin: 8px 12px;
-  padding: 3px 6px;
+  padding: 5px 10px;
 }
 
 .footer p, .footer span {
@@ -272,7 +272,7 @@ header.header {
 }
 
 .header h1, .header h2, .header h3{
-  padding: 4px 8px;
+  padding: 5px 10px;
   background: rgba(0, 0, 0, .75);
   width: fit-content;
 }
