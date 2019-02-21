@@ -104,8 +104,9 @@ a[href]:visited {
   color: var(--blue);
 }
 .nav-item a[href]:hover {
-  background: rgba(255, 255, 255, .75);
+  background: transparent;
   color: var(--black);
+  text-shadow: 1px 1px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
 }
 .nav-item-active {
   font-weight: 700;
