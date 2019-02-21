@@ -64,6 +64,7 @@ function glitchImage(params) {
     var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
     var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
     latestGlitch = Date.now();
+    console.log('glitch img');
     loadImage( imagePath, function ( img ) {
       glitch( params )
         .fromImage( img )
@@ -86,6 +87,10 @@ function glitchImage(params) {
           } else {
             glitchBgContainerEl.appendChild(imageEl);
           }
+          if (imageEl.width === 16) {
+            console.log('reglitching');
+            glitchImage(getRandomParams());
+          }
         });
     });
 }
@@ -106,13 +111,7 @@ function glitchImage(params) {
 //   }
 // });
 addEvent(window, 'blur', function(event) {
-  var temp = {
-    amount:     scale(Math.random(), 0, 1, 10, 60),
-    iterations: scale(Math.random(), 0, 1, 5, 35),
-    quality:    scale(Math.random(), 0, 1, 10, 60),
-    seed:       scale(Math.random(), 0, 1, 0, 100)
-  };
-  glitchImage(temp);
+  glitchImage(getRandomParams());
 });
 var latestY = 0;
 var latestGlitch = Date.now();
@@ -123,14 +122,30 @@ var latestGlitch = Date.now();
 //   quality:    50,
 //   seed:       25
 // };
-
-addEvent(window, 'onload', function() {
+function getRandomParams() {
   var params = {
     amount:     scale(Math.random(), 0, 1, 10, 60),
     iterations: scale(Math.random(), 0, 1, 5, 35),
     quality:    scale(Math.random(), 0, 1, 10, 60),
     seed:       scale(Math.random(), 0, 1, 0, 100)
   };
-  glitchImage(params);
-  // setTimeoutForGlitch();
-});
+  return params;
+}
+var img = document.getElementById('bg-img');
+
+function loaded() {
+  glitchImage(getRandomParams());
+}
+
+if (img.complete) {
+  loaded()
+} else {
+  img.addEventListener('load', loaded)
+}
+// addEvent(document.getElementById('bg-img'), 'load', function() {
+//   glitchImage(getRandomParams());
+// });
+// addEvent(window, 'onload', function() {
+//   // glitchImage(getRandomParams());
+//   // setTimeoutForGlitch();
+// });
