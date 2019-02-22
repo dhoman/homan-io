@@ -5,7 +5,7 @@ const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 module.exports = function(config) {
 
-  // A useful way to reference to the contect we are runing eleventy in
+  // A useful way to reference to the context we are running eleventy in
   let env = process.env.ELEVENTY_ENV;
 
   config.addPlugin(pluginRss);
@@ -15,7 +15,7 @@ module.exports = function(config) {
   config.addLayoutAlias("post", "layouts/post.njk");
   config.addLayoutAlias('default', 'layouts/base.njk');
 
-  // Add some utiliuty filters
+  // Add some utility filters
   config.addFilter("readableDate", dateObj => {
     return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat("dd LLL yyyy");
   });
