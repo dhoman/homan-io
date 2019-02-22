@@ -15,6 +15,7 @@ The hard truth is you aren't going to suddenly find yourself passionate about so
 
 Passion isn't something you randomly find, it's more something that you may not have noticed that you had but was always growing because you kept at it and kept getting better at said task or skill.
 
+
 ### How to Find Passion in a Task, Hobby, Etc
 
 I think society does a bad job of teaching us how to become passionate about something. They tell us that we should do something that we are passionate about, but NEVER how to become passionate about something.
@@ -26,6 +27,10 @@ But since you never start off good at something, the sequence of events looks li
 hard work -> skill -> reward -> passion
 
 and it's only when you find yourself skilled and getting a good reward for the task do you realize that you are passionate about it
+
+But how do we do that as adults? You got to start small, and reward yourself for those small victories (or have someone who gives you positive and constructive feedback.) And keep repeating the cycle with increasing difficulty.
+
+For instance when we are kids, our parents reward us for things that we aren't necessarily good at (ie piano lessons or sports) in hope to cause us to do it more, but as an adult we don't get that positive reinforcement to keep at it when our skills are just beginning to develop. And that's criminal in my opinion.
 
 For jobs that require skills, this is very applicable (programming, design, cooking, carpentry, etc) but a lot of modern business jobs all have a wide variety of titles but the actual tasks can be all over the place.... so what do you do in this case?
 
