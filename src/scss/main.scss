@@ -219,24 +219,6 @@ a[href].direct-link:focus:visited,
   z-index: 2;
   padding: 3px 6px;
 }
-/* 
-.nav-container{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: transparent;
-  position: relative;
-}*/ 
-/* background: rgba(0, 0, 0, 0.2); */
-
-/* .sticky + .content {
-  padding-top: 60px;
-} */
-/* 
-.main {
-  min-height: 200px;
-} 
-*/
 
 #filler.filler {
   height: 200px;
@@ -244,10 +226,7 @@ a[href].direct-link:focus:visited,
 }
 
 #glitch-bg {
-  position: fixed;
   top: 0px;
-  // width: 1024px;
-  /* background-image: url(../img/waterfall.jpg); */
   overflow: hidden;
 }
 #glitch-bg img {

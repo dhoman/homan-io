@@ -59,12 +59,16 @@ function setTimeoutForGlitch() {
 
 var glitchBgContainerEl = document.getElementById( 'glitch-bg' );
 var glitchImgWidth = 0;
+var is_safari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
 function glitchImage(params) {
     // console.log('glitchParams: ' + JSON.stringify(params));
-    var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-    var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-    latestGlitch = Date.now();
-    console.log('glitch img');
+    // var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    // var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+    // latestGlitch = Date.now();
+    // if( is_safari) {
+    //   console.log('test');
+    // } else {
     loadImage( imagePath, function ( img ) {
       glitch( params )
         .fromImage( img )
@@ -72,24 +76,24 @@ function glitchImage(params) {
         .then( function( dataURL ) {
           var imageEl = new Image();
           imageEl.src = dataURL;
+          console.log('test2');
           // the new image doesn't always have a width... so store it
-          if (glitchImgWidth === 0 && imageEl.width) {
-            glitchImgWidth = imageEl.width;
-          }
-          // if viewport is small, let's center the img
-          if (w < glitchImgWidth) {
-            imageEl.style.right = '-' + (glitchImgWidth - w )/ 2 + 'px';
-            // console.log(imageEl.style);
-          }
+          // if (glitchImgWidth === 0 && imageEl.width) {
+          //   glitchImgWidth = imageEl.width;
+          // }
+          // // if viewport is small, let's center the img
+          // if (w < glitchImgWidth) {
+          //   imageEl.style.right = '-' + (glitchImgWidth - w )/ 2 + 'px';
+          //   // console.log(imageEl.style);
+          // }
           if(glitchBgContainerEl.childNodes.length) {
+            console.log('test3');
             // we have to remove and replace the image element because if we simply updated the data url there'd be a memory leak
             glitchBgContainerEl.replaceChild(imageEl, glitchBgContainerEl.childNodes[0]);
+            console.log('test3.5');
           } else {
+            console.log('test4');
             glitchBgContainerEl.appendChild(imageEl);
-          }
-          if (imageEl.width === 16) {
-            console.log('reglitching');
-            glitchImage(getRandomParams());
           }
         });
     });
