@@ -26,6 +26,12 @@ body {
 p:last-child {
   margin-bottom: 0;
 }
+.content ul li {
+   text-indent: -10px;
+}
+.content ul {
+  margin-left: 15px;
+}
 /*
  p,
  .tmpl-post li,
