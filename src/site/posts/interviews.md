@@ -1,7 +1,7 @@
 ---
-title: Hello World
-summary: ramblings
-date: 2019-02-20
+title: Social Engineering Interviews
+summary: how to better answer and ask questions
+date: 2019-04-12
 tags:
   - business-stuff
 layout: layouts/post.njk
