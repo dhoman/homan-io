@@ -4,6 +4,7 @@ summary: ramblings
 date: 2019-02-21
 tags:
   - deep-thoughts
+  - business-stuff
 layout: layouts/post.njk
 bg-image: panda.jpeg
 ---
