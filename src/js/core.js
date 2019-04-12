@@ -1,8 +1,7 @@
 
 var imagePath = "{{ '/images/waterfall.jpg' }}";
-//var imgContainerEl = document.getElementById( 'homan-img-container' );
-//var canvasContainerEl = document.getElementById( 'homan-canvas' );
 
+// utility functions
 function loadImage ( src, callback ) {
   var imageEl = new Image();
   imageEl.onload = function () {
@@ -34,41 +33,30 @@ function scale(num, in_min, in_max, out_min, out_max) {
   return (num - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
 }
 
-function timeOutGlitch() {
-  var currentTime = Date.now();
-  if (latestGlitch + 2000 < currentTime) {
-    var sin = Math.sin(currentTime);
-    var cos = Math.cos(currentTime);
-    latestGlitch = currentTime;
-    var tempParams = {
-      amount: scale(sin, -1, 1, 10, 60),
-      iterations: scale(cos, -1, 1, 5, 35),
-      quality: scale(sin, -1, 1, 10, 60),
-      seed: scale(sin, -1, 1, 0, 100)
-    }
-    glitchImage(tempParams);
-  }
-}
-
-function setTimeoutForGlitch() {
-  setTimeout(function() {
-    timeOutGlitch();
-    setTimeoutForGlitch();
-  }, Math.random() * 10000);
-}
+// var latestGlitch = Date.now();
+// function timeOutGlitch() {
+//   var currentTime = Date.now();
+//   if (latestGlitch + 2000 < currentTime) {
+//     var sin = Math.sin(currentTime);
+//     var cos = Math.cos(currentTime);
+//     latestGlitch = currentTime;
+//     glitchImage(getRandomParams());
+//   }
+// }
+// function setTimeoutForGlitch() {
+//   setTimeout(function() {
+//     timeOutGlitch();
+//     setTimeoutForGlitch();
+//   }, Math.random() * 10000);
+// }
+// addEvent(window, 'onload', function() {
+//   // glitchImage(getRandomParams());
+//   // setTimeoutForGlitch();
+// });
 
 var glitchBgContainerEl = document.getElementById( 'glitch-bg' );
-var glitchImgWidth = 0;
-var is_safari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 
 function glitchImage(params) {
-    // console.log('glitchParams: ' + JSON.stringify(params));
-    // var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-    // var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-    // latestGlitch = Date.now();
-    // if( is_safari) {
-    //   console.log('test');
-    // } else {
     loadImage( imagePath, function ( img ) {
       glitch( params )
         .fromImage( img )
@@ -76,56 +64,29 @@ function glitchImage(params) {
         .then( function( dataURL ) {
           var imageEl = new Image();
           imageEl.src = dataURL;
-          console.log('test2');
-          // the new image doesn't always have a width... so store it
-          // if (glitchImgWidth === 0 && imageEl.width) {
-          //   glitchImgWidth = imageEl.width;
-          // }
-          // // if viewport is small, let's center the img
-          // if (w < glitchImgWidth) {
-          //   imageEl.style.right = '-' + (glitchImgWidth - w )/ 2 + 'px';
-          //   // console.log(imageEl.style);
-          // }
           if(glitchBgContainerEl.childNodes.length) {
-            console.log('test3');
             // we have to remove and replace the image element because if we simply updated the data url there'd be a memory leak
             glitchBgContainerEl.replaceChild(imageEl, glitchBgContainerEl.childNodes[0]);
-            console.log('test3.5');
           } else {
-            console.log('test4');
             glitchBgContainerEl.appendChild(imageEl);
           }
         });
     });
 }
 
+// how to setup glitch on scrolling
+// var latestY = 0;
 // addEvent(window, 'scroll', function(event) {
 //   var y = getScrollY();
-//   if (Math.abs(latestY - y) > 50) {
+//   if (Math.abs(latestY - y) > 100) {
 //     latestY = y;
-//     var sin = Math.sin(y);
-//     var cos = Math.cos(y);
-//     var tempParams = {
-//       amount: scale(sin, -1, 1, 10, 60),
-//       iterations: scale(cos, -1, 1, 5, 35),
-//       quality: scale(sin, -1, 1, 10, 60),
-//       seed: scale(sin, -1, 1, 0, 100)
-//     }
-//     glitchImage(tempParams);
+//     glitchImage(getRandomParams());
 //   }
 // });
 addEvent(window, 'blur', function(event) {
   glitchImage(getRandomParams());
 });
-var latestY = 0;
-var latestGlitch = Date.now();
 
-// var params = {
-//   amount:     20,
-//   iterations: 40,
-//   quality:    50,
-//   seed:       25
-// };
 function getRandomParams() {
   var params = {
     amount:     scale(Math.random(), 0, 1, 10, 60),
@@ -135,21 +96,15 @@ function getRandomParams() {
   };
   return params;
 }
-var img = document.getElementById('bg-img');
-
+var glitchImg = document.getElementById('bg-img');
 function loaded() {
   glitchImage(getRandomParams());
 }
-
-if (img.complete) {
+if (glitchImg.complete) {
   loaded()
 } else {
-  img.addEventListener('load', loaded)
+  glitchImg.addEventListener('load', loaded)
 }
 // addEvent(document.getElementById('bg-img'), 'load', function() {
 //   glitchImage(getRandomParams());
-// });
-// addEvent(window, 'onload', function() {
-//   // glitchImage(getRandomParams());
-//   // setTimeoutForGlitch();
 // });
