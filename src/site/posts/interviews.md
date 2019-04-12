@@ -10,7 +10,7 @@ bg-image: panda.jpeg
 
 ## TL;DR; Summary
 
-Interviewers never want you to fail. Nobody decides to interview someone just to setup them up to fail as it costs them time and money to search for me. Yes, they will tell some people no due to different reasons, but the point is that they all want you to succeed that way they can stop their search and you can start solving their problems.
+Interviewers never want you to fail. Nobody decides to interview someone just to setup them up to fail as it costs them time and money to search for another candidate. Yes, they will tell some people no due to different reasons, but the point is that they all want you to succeed that way they can stop their search and you can start solving their problems.
 
 My advice is figure out why they are asking the question then answer the question honestly while characterizing yourself as someone who'd "save the day"
 
