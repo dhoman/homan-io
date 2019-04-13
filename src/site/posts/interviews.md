@@ -67,3 +67,7 @@ Talk it out, even if you don't know the answer explain that you don't know but t
 Like the earlier question examples, you do yourself no good if you provide a simple answer "no" or "I don't know."
 
 There is nothing wrong though with starting off with "I don't know" then following it up with giving your best guess as that shows that even if you don't know will give a stab at tackling the problem and shows that you have humility and are honest about your abilities and communication.
+
+## End
+
+Remember, interviews are just as much for you as they are for them. They are trying to figure out if you'd be a good fit and good worker, and you should be trying to learn if you'd enjoy it there and if it's a good place to work.
