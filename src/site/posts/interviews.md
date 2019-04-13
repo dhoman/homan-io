@@ -26,7 +26,7 @@ For instance. If someone were to ask if you liked dogs... chances are they have 
 
 The biggest takeaway from this post is to question why they are asking a question and then provide an answer that characterizes you as someone who is willing or motivated to solve their problems while being honest.
 
-One thing I highly believe in is you should never answer with short "yes" or "no" responses. While they are easy to say they provide no supporting information, even if you say "yes, I've done that" you didn't provide them any examples of when you did that or were in that situations. And really that's what they want, they didn't want a "yes" response, they wanted an explicit example of you tackling or overcoming that problem. The same goes for "no" responses.
+One thing I highly believe in is you should never answer with short "yes" or "no" responses. While they are easy to say they provide no supporting information, even if you say "yes, I've done that" you didn't provide any examples of when you did that or were in that situations. And really that's what they want, they didn't want a "yes" response, they wanted an explicit example of you tackling or overcoming that problem. The same goes for "no" responses.
 
 There is absolutely no reason to lie, but answering a question saying that you don't know the hottest new language but would love to learn and are a relatively quick learner is absolutely a better answer than simply saying "no."
 
