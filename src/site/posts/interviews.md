@@ -22,11 +22,6 @@ What that means is that a lot of the questions should be taken with a grain of s
 
 For instance. If someone were to ask if you liked dogs... chances are they have a dog policy and are trying to filter people who like and don't like dogs. Now this is important, because if you don't like them but don't mind them that's one thing. But if you were allergic there is absolutely no reason to lie about it.
 
-## Some Programmer Examples
-
-* Do you like dealing with legacy code? - This means that they have a lot of legacy code... sample response would be "no, but I understand that all code eventually becomes legacy code and often times legacy code is where one can find all the business rules of how the company operates"
-* How do you manage stress / do you get stressed easily - this means they have a stressful environment, everybody gets stressed but want they want to see is you list some good stress management techniques
-
 ## The Tactic
 
 The biggest takeaway from this post is to question why they are asking a question and then provide an answer that characterizes you as someone who is willing or motivated to solve their problems while being honest.
@@ -34,6 +29,11 @@ The biggest takeaway from this post is to question why they are asking a questio
 One thing I highly believe in is you should never answer with short "yes" or "no" responses. While they are easy to say they provide no supporting information, even if you say "yes, I've done that" you didn't provide them any examples of when you did that or were in that situations. And really that's what they want, they didn't want a "yes" response, they wanted an explicit example of you tackling or overcoming that problem. The same goes for "no" responses.
 
 There is absolutely no reason to lie, but answering a question saying that you don't know the hottest new language but would love to learn and are a relatively quick learner is absolutely a better answer than simply saying "no."
+
+## Some Programmer Examples
+
+* Do you like dealing with legacy code? - This means that they have a lot of legacy code... sample response would be "no, but I understand that all code eventually becomes legacy code and often times legacy code is where one can find all the business rules of how the company operates"
+* How do you manage stress / do you get stressed easily - this means they have a stressful environment, everybody gets stressed but want they want to see is you list some good stress management techniques
 
 ## Q&A
 
