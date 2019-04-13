@@ -10,7 +10,7 @@ bg-image: panda.jpeg
 
 ## TL;DR; Summary
 
-Interviewers never want you to fail. Nobody decides to interview someone just to setup them up to fail as it costs them time and money to search for another candidate. Yes, they will tell some people no due to different reasons, but the point is that they all want you to succeed that way they can stop their search and you can start solving their problems.
+Interviewers never want you to fail. Nobody decides to interview someone just to setup them up to fail as it costs them time and money to search for another candidate. Yes, they will tell some people "no" due to different reasons, but the point is that they all want you to succeed so that way they can stop their search and you can start solving their problems.
 
 My advice is figure out why they are asking the question then answer the question honestly while characterizing yourself as someone who'd "save the day"
 
@@ -31,7 +31,9 @@ For instance. If someone were to ask if you liked dogs... chances are they have 
 
 The biggest takeaway from this post is to question why they are asking a question and then provide an answer that characterizes you as someone who is willing or motivated to solve their problems while being honest.
 
-There is absolutely no reason to lie, but answering a question saying that you don't know the hottest new language but would love to learn and are a relatively quick learner is absolutely still a better answer than simply saying "no"
+One thing I highly believe in is you should never answer with short "yes" or "no" responses. While they are easy to say they provide no supporting information, even if you say "yes, I've done that" you didn't provide them any examples of when you did that or were in that situations. And really that's what they want, they didn't want a "yes" response, they wanted an explicit example of you tackling or overcoming that problem. The same goes for "no" responses.
+
+There is absolutely no reason to lie, but answering a question saying that you don't know the hottest new language but would love to learn and are a relatively quick learner is absolutely a better answer than simply saying "no."
 
 ## Q&A
 
@@ -41,11 +43,11 @@ I used to hate it when it was my turn to ask questions. But now I've realized th
 
 The key to asking a good questions it that it should take them a couple of seconds to think about the answer.
 
-For instance, asking what their favorite color... while more complex than asking a "yes, no" questions is still a very simple question as most people know what they would answer immediately. It's a simple look up of personal preferences.
+For instance, asking what their favorite color... while more complex than asking a "yes" "no" question is still a very simple question as most people know what they would answer immediately. It's a simple look up of personal preferences.
 
-A good question is one that they have to step back and actually construct the answer because they have to think about it, now the difficulty in this in interviews is that it should be related to the job or company.
+A good question is one that they have to step back and actually construct the answer because they have to think about it for a couple of seconds, now the difficulty in this in interviews is that it should be related to the job or company.
 
-Usually I try to think of questions while they are talking and explaining the job, or asking questions to me (that are easy look up questions like "tell me about yourself".) But the best questions are insightful questions based off what they told me in the interview. As they are genuine and authentic.
+Usually I try to think of questions while they are talking and explaining the job, or asking questions to me (such as easy look up questions like "tell me about yourself".) But the best questions are insightful questions based off what they told me in the interview. As questions based off what they said are genuine and authentic and will get noticed as such.
 
 Some example questions that I'd typically ask if I ran out of questions on the spot or can't think of any though are:
 
@@ -56,10 +58,12 @@ Some example questions that I'd typically ask if I ran out of questions on the s
 
 This is going to be quick, but essentially if there is anything you are worried about but don't know you'd want to find that out being leaving the interview. Some places are just not a good place to be and you're doing yourself a huge favor finding that out before it's too late and you switched jobs.
 
-There is a tact to it though, you can't simply ask "Is this a good place to work?" As they will say no, relatively quickly and you've also casted doubt as yourself as a candidate in their eyes. But you can and should (if concerned) ask them what typical hours are for employees, what the management stuff of your boss will be, or even if they have free coffee or what other office perks are.
+There is a tact to it though, you can't simply ask "Is this a good place to work?" As they will say "no" almost instantaneously and you'll also cast doubt as yourself as a candidate in their eyes. But you can and should (if concerned) ask them what typical hours are for employees, what the management stuff of your boss will be, or even if they have free coffee or what other office perks are.
 
-## Programming Questions
+## Programming Questions or Other Troublesome Questions
 
 Talk it out, even if you don't know the answer explain that you don't know but this is what you think and why you think the answer is that.
 
-Like the earlier question examples, you do yourself no good if you simple answer "no" or "I don't know"
+Like the earlier question examples, you do yourself no good if you provide a simple answer "no" or "I don't know."
+
+There is nothing wrong though with starting off with "I don't know" then following it up with giving your best guess as that shows that even if you don't know will give a stab at tackling the problem and shows that you have humility and are honest about your abilities and communication.
