@@ -6,7 +6,7 @@ tags:
   - deep-thoughts
   - business-stuff
 layout: layouts/post.njk
-bg-image: panda.jpeg
+bgimg: /images/panda.jpg
 ---
 I hate when people say you should do something you are passionate about. Because usually the answer is something that they like (but aren't actually passionate about) or they say they aren't passionate about anything. And then that's the end of the conversation.
 

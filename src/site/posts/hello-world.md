@@ -5,7 +5,7 @@ date: 2019-02-20
 tags:
   - idk
 layout: layouts/post.njk
-bg-image: panda.jpeg
+bgimg: /images/panda.jpg
 ---
 
 Back in the days of xanga, myspace, and geocities, the internet was a different place. It was perfectly ok to browse your friends websites that included gifs of the hamster dance, marquee tags and what have you.

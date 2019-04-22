@@ -8,7 +8,11 @@
   </head>
   <body class="{{ bodyClass }}" >
     <div id="glitch-bg">
-      <img id="bg-img" src="{{ '/images/waterfall.jpg' }}">
+      {% if bgimg %}
+        <img id="bg-img" src="{{ bgimg }}">
+      {% else %}
+        <img id="bg-img" src="{{ '/images/waterfall.jpg' }}" style="height: 768px;">
+      {% endif %}
     </div>
     <div class="wrapper">
       <header class="header">

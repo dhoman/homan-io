@@ -6,7 +6,7 @@ tags:
   - learning
   - deep-thoughts
 layout: layouts/post.njk
-bg-image: panda.jpeg
+bgimage: panda.jpeg
 ---
 
 I used to be a bad employee, I'm still not a perfect employee by any means, but I used to be afraid to write code and when I wrote code it was never good code.

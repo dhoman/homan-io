@@ -1,6 +1,6 @@
 
-var imagePath = "{{ '/images/waterfall.jpg' }}";
-
+// var imagePath = "{{ '/images/waterfall.jpg' }}";
+var imagePath = document.getElementById("bg-img").src;
 // utility functions
 function loadImage ( src, callback ) {
   var imageEl = new Image();
@@ -57,21 +57,22 @@ function scale(num, in_min, in_max, out_min, out_max) {
 var glitchBgContainerEl = document.getElementById( 'glitch-bg' );
 
 function glitchImage(params) {
-    loadImage( imagePath, function ( img ) {
-      glitch( params )
-        .fromImage( img )
-        .toDataURL()
-        .then( function( dataURL ) {
-          var imageEl = new Image();
-          imageEl.src = dataURL;
-          if(glitchBgContainerEl.childNodes.length) {
-            // we have to remove and replace the image element because if we simply updated the data url there'd be a memory leak
-            glitchBgContainerEl.replaceChild(imageEl, glitchBgContainerEl.childNodes[0]);
-          } else {
-            glitchBgContainerEl.appendChild(imageEl);
-          }
-        });
-    });
+  // console.log(imagePath);
+  loadImage( imagePath, function ( img ) {
+    glitch( params )
+      .fromImage( img )
+      .toDataURL()
+      .then( function( dataURL ) {
+        var imageEl = new Image();
+        imageEl.src = dataURL;
+        if(glitchBgContainerEl.childNodes.length) {
+          // we have to remove and replace the image element because if we simply updated the data url there'd be a memory leak
+          glitchBgContainerEl.replaceChild(imageEl, glitchBgContainerEl.childNodes[0]);
+        } else {
+          glitchBgContainerEl.appendChild(imageEl);
+        }
+      });
+  });
 }
 
 // how to setup glitch on scrolling
@@ -98,6 +99,7 @@ function getRandomParams() {
 }
 var glitchImg = document.getElementById('bg-img');
 function loaded() {
+  imagePath = document.getElementById("bg-img").src;
   glitchImage(getRandomParams());
 }
 if (glitchImg.complete) {
