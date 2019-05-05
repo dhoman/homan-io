@@ -1,6 +1,6 @@
 # homan.io
 
-This repo was really spun out of two other base 11ty projects, so before I get too far
+This repo was really spun out of two other base 11ty projects, so before I get too far...
 
 ## Major Props
 - [EleventyOne](https://github.com/philhawksworth/eleventyone)
