@@ -1,7 +1,7 @@
 ---
 title: Too Many Side Projects
 summary: ramblings
-date: 2019-07-18
+date: 2019-07-24
 tags:
   - random
   - planning
