@@ -33,26 +33,6 @@ function scale(num, in_min, in_max, out_min, out_max) {
   return (num - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
 }
 
-// var latestGlitch = Date.now();
-// function timeOutGlitch() {
-//   var currentTime = Date.now();
-//   if (latestGlitch + 2000 < currentTime) {
-//     var sin = Math.sin(currentTime);
-//     var cos = Math.cos(currentTime);
-//     latestGlitch = currentTime;
-//     glitchImage(getRandomParams());
-//   }
-// }
-// function setTimeoutForGlitch() {
-//   setTimeout(function() {
-//     timeOutGlitch();
-//     setTimeoutForGlitch();
-//   }, Math.random() * 10000);
-// }
-// addEvent(window, 'onload', function() {
-//   // glitchImage(getRandomParams());
-//   // setTimeoutForGlitch();
-// });
 
 var glitchBgContainerEl = document.getElementById( 'glitch-bg' );
 
@@ -107,6 +87,3 @@ if (glitchImg.complete) {
 } else {
   glitchImg.addEventListener('load', loaded)
 }
-// addEvent(document.getElementById('bg-img'), 'load', function() {
-//   glitchImage(getRandomParams());
-// });

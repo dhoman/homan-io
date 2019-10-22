@@ -7,7 +7,7 @@
   "scripts": {
     "start": "yarn run dev",
     "dev": "gulp dev & eleventy --serve",
-    "build": "gulp build & ELEVENTY_ENV=dev eleventy && yarn run build:functions",
+    "build": "gulp build & ELEVENTY_ENV=dev eleventy",
     "seed": "gulp build & ELEVENTY_ENV=seed eleventy",
     "build:functions": "netlify-lambda build src/lambda",
     "dev:functions": "netlify-lambda serve src/lambda"
