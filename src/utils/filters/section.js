@@ -1,4 +1,5 @@
 
+
 /**
  * Split the content into excerpt and remainder
  *
@@ -20,4 +21,3 @@ module.exports = function(str, section) {
     return str
   }
 }
-

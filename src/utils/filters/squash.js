@@ -29,4 +29,3 @@ module.exports = function(text) {
 
   return result;
 }
-
