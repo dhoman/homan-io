@@ -10,9 +10,10 @@
   <body class="{{ bodyClass }}" >
     <div id="glitch-bg">
       {% if bgimg %}
-        <img id="bg-img" src="{{ bgimg }}" alt="{{ bgimg | photoDescriptor}}">
+        <img id="bg-img" src="{{ bgimg | bgImgFilter }}" alt="{{ bgimg | photoDescriptor}}">
       {% else %}
-        <img id="bg-img" src="{{ '/images/waterfall.jpg' }}" alt="{{  '/images/waterfall.jpg' | photoDescriptor}}" style="height: 768px;">
+        <img id="bg-img" src="{{ '/images/waterfall.jpg' | 
+        bgImgFilter }}" alt="{{  '/images/waterfall.jpg' | photoDescriptor}}" style="height: 768px;">
       {% endif %}
     </div>
     <div class="wrapper">

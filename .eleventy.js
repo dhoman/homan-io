@@ -1,7 +1,17 @@
 const { DateTime } = require("luxon");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const rssPlugin = require('@11ty/eleventy-plugin-rss');
+const fastglob = require("fast-glob");
+const fs = require("fs-extra");
 
+function getWidthFromFilename(filename) {
+  var temp = filename.split('_');
+  if (temp.length) {
+    temp = temp[temp.length-1];
+    return temp.split('.')[0];
+  }
+  return 0;
+}
 
 module.exports = function(config) {
   // Layout aliases can make templates more portable
@@ -16,9 +26,28 @@ module.exports = function(config) {
   });
   config.addFilter('photoDescriptor', (imgPath) => {
     var temp = imgPath.split('/');
-    console.log(temp[temp.length-1].split('.')[0]);
     return temp[temp.length-1].split('.')[0];
   });
+  config.addNunjucksAsyncFilter('bgImgFilter', (imgPath, callback) => {
+    var temp = imgPath.split('/')[imgPath.split('/').length - 1].split('.')[0];
+    var ext = imgPath.split('.')[1];
+    fastglob(`./src/site/_optimized_images/*.${ext}`, {
+      caseSensitiveMatch: false
+    }).then(globs => {
+      if (globs.length) {
+        var biggest = imgPath;
+        for (var i = 0; i < globs.length; i++) {
+          if (globs[i].includes(temp)) {
+            if (getWidthFromFilename(biggest) < getWidthFromFilename(globs[i])) {
+              biggest = globs[i];
+            }
+          }
+        }
+        callback(null, `/images/${biggest.split('_optimized_images/')[1]}`);
+      }
+      callback(null, imgPath);
+    });
+  })
 
   config.addFilter('htmlDateString', (dateObj) => {
     return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('yyyy-LL-dd');
@@ -60,7 +89,7 @@ module.exports = function(config) {
 
   // pass some assets right through
   config.addPassthroughCopy("./src/site/images");
-  config.addPassthroughCopy({"src/site/images/opt": "images"});
+  config.addPassthroughCopy({"src/site/_optimized_images/*.(jpg|webp)": "images"});
   config.addPassthroughCopy("./src/site/files");
   config.setDataDeepMerge(true);
 

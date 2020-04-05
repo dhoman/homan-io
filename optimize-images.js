@@ -4,7 +4,7 @@ const optImg = require('./responsive-image');
 
 const folderPath = './';
 const rawImgPath = `${folderPath}src/site/images`;
-const outputImgPath = `${folderPath}src/site/images/opt`;
+const outputImgPath = `${folderPath}src/site/_optimized_images`;
 
 (async () => {
   // let imgPaths = new Set();
