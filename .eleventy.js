@@ -16,6 +16,7 @@ module.exports = function(config) {
   });
   config.addFilter('photoDescriptor', (imgPath) => {
     var temp = imgPath.split('/');
+    console.log(temp[temp.length-1].split('.')[0]);
     return temp[temp.length-1].split('.')[0];
   });
 
@@ -59,6 +60,7 @@ module.exports = function(config) {
 
   // pass some assets right through
   config.addPassthroughCopy("./src/site/images");
+  config.addPassthroughCopy({"src/site/images/opt": "images"});
   config.addPassthroughCopy("./src/site/files");
   config.setDataDeepMerge(true);
 
