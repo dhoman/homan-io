@@ -1,6 +1,7 @@
 
 // var imagePath = "{{ '/images/waterfall.jpg' }}";
 var imagePath = document.getElementById("bg-img").src;
+var doneLoading = false;
 // utility functions
 function loadImage ( src, callback ) {
   var imageEl = new Image();
@@ -46,7 +47,9 @@ function glitchImage(params) {
 }
 
 addEvent(window, 'blur', function(event) {
-  glitchImage(getRandomParams());
+  if (doneLoading) {
+    glitchImage(getRandomParams());
+  }
 });
 
 function getRandomParams() {
@@ -60,8 +63,7 @@ function getRandomParams() {
 }
 var glitchImg = document.getElementById('bg-img');
 function loaded() {
-  imagePath = document.getElementById("bg-img").src;
-  glitchImage(getRandomParams());
+  doneLoading = true;
 }
 if (glitchImg.complete) {
   loaded()
