@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>{% include "css/main.css" %}</style>
+    {# <style>{% include "css/main.css" %}</style> #}
+    <link rel="stylesheet" href="/css/main.css">
     <title>{{ title }}</title>
   </head>
   <body class="{{ bodyClass }}" >
@@ -16,19 +17,6 @@
     </div>
     <div class="wrapper">
       <header class="header">
-        {# <div id="navbar">
-          <h1 class="home">
-            <a href="{{ '/' | url }}">
-              <div id='homan-img-container'></div>
-              {{ metadata.title }}
-            </a>
-          </h1>
-          <ul class="nav">
-            {%- for nav in collections.nav | reverse -%}
-            <li class="nav-item{% if nav.url == page.url %} nav-item-active{% endif %}"><a href="{{ nav.url | url }}">{{ nav.data.navtitle }}</a></li>
-            {%- endfor -%}
-          </ul>
-        </div> #}
         <h1>homan.io</h1>
         <h2>The Ramblings of Derek Homan</h2>
         <h3>programmer, nerd, human</h3>
@@ -48,7 +36,11 @@
       </article>
       {% include "footer.njk" %}
     </div>
-    <script>{% include "js/scripts.js" %}</script>
+    {% set js %}
+      {% include "js/core.js" %}
+      {% include "js/glitch-canvas-browser-with-polyfills.min.js" %}
+    {% endset %}
+    <script>{{ js | jsmin | safe }}</script>
   </body>
 </html>
 

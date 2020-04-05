@@ -9,6 +9,7 @@ function loadImage ( src, callback ) {
   };
   imageEl.src = src;
 }
+
 function addEvent( obj, type, fn ) {
   if ( obj.attachEvent ) {
     obj['e'+type+fn] = fn;
@@ -18,17 +19,7 @@ function addEvent( obj, type, fn ) {
     obj.addEventListener( type, fn, false );
   }
 }
-function getScrollY() {
-  var scrOfY = 0;
-  if( typeof( window.pageYOffset ) == 'number' ) {
-    //Netscape compliant
-    scrOfY = window.pageYOffset;
-  } else if( document.body && document.body.scrollTop )  {
-    //DOM compliant
-    scrOfY = document.body.scrollTop;
-  } 
-  return scrOfY;
-}
+
 function scale(num, in_min, in_max, out_min, out_max) {
   return (num - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
 }
@@ -37,7 +28,6 @@ function scale(num, in_min, in_max, out_min, out_max) {
 var glitchBgContainerEl = document.getElementById( 'glitch-bg' );
 
 function glitchImage(params) {
-  // console.log(imagePath);
   loadImage( imagePath, function ( img ) {
     glitch( params )
       .fromImage( img )
@@ -55,15 +45,6 @@ function glitchImage(params) {
   });
 }
 
-// how to setup glitch on scrolling
-// var latestY = 0;
-// addEvent(window, 'scroll', function(event) {
-//   var y = getScrollY();
-//   if (Math.abs(latestY - y) > 100) {
-//     latestY = y;
-//     glitchImage(getRandomParams());
-//   }
-// });
 addEvent(window, 'blur', function(event) {
   glitchImage(getRandomParams());
 });

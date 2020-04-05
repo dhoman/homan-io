@@ -1,0 +1,16 @@
+{
+  "title": "The Ramblings of Derek Homan",
+  "url": "https://homan.io",
+  "description": "programmer, nerd, human",
+  "feed": {
+    "subtitle": "homan.io - the ramblings of Derek Homan",
+    "filename": "feed.xml",
+    "path": "/feed/feed.xml",
+    "id": "https://homan.io"
+  },
+	"source_url": "https://github.com/dhoman/homan-io", 
+  "author": {
+    "name": "Derek Homan",
+    "twitter": "derekhoman"
+  }
+}
