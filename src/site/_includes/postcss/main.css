@@ -23,14 +23,17 @@ body {
   color: var(--near-white);
   background-color: var(--near-black);
 }
-p:last-child {
+/* p:last-child {
   margin-bottom: 0;
+} */
+.content .visible-contrast ul li {
+   text-indent: 0px;
 }
 .content ul li {
-   text-indent: -10px;
+   text-indent: 0px;
 }
-.content ul {
-  margin-left: 15px;
+.content:hover {
+  background: rgba(0, 0, 0, .75);
 }
 /*
  p,
@@ -71,7 +74,7 @@ pre {
   hyphens: none;
   padding: 1em;
   margin: .5em 0;
-  background-color: #f6f6f6;
+  background-color: var(--near-black);
 }
 
 /* Header */
@@ -84,7 +87,21 @@ pre {
 .home :link:not(:hover) {
   text-decoration: none;
 }
-
+.token.keyword {
+  color: var(--light-blue);
+}
+.token.operator {
+  color: salmon;
+}
+.token.punctuation {
+  color: red;
+}
+.token.function {
+  color: chartreuse;
+}
+.token.comment {
+  color: mediumorchid;
+}
 
 /* Nav */
 .nav {
@@ -106,10 +123,6 @@ ul.nav li.nav-item a, .home {
 .nav-item a[href]:not(:hover) {
   text-decoration: none;
 }
-a[href]:visited {
-  background: rgba(255, 255, 255, .75);
-  color: var(--blue);
-}
 .nav-item a[href]:hover {
   background: transparent;
   color: var(--black);
@@ -128,7 +141,7 @@ a[href]:visited {
   padding: 0;
 }
 .postlist-item {
-  counter-increment: start-from -1;
+  counter-increment: start-from 1;
 }
 .postlist-item:before {
   display: inline-block;
@@ -212,7 +225,12 @@ a[href].direct-link:focus:visited,
   z-index: 2;
   padding: 5px 10px;
 }
-
+.content ul {
+  margin-left: 10px;
+}
+.content li {
+  margin-left: 20px;
+}
 .visible-contrast {
   background-color: var(--near-black);
   color: var(--near-white);
@@ -247,9 +265,10 @@ a[href].direct-link:focus:visited,
   box-sizing: border-box;
 }
 
+/* 
 h1, p {
   margin: 0 0 1em 0;
-}
+} */
 
 .wrapper {
   max-width: 940px;
@@ -288,13 +307,12 @@ header.header {
 @media screen and (min-width: 601px) {
   .nav {
     flex-direction: column;
+    padding-top: 15px;
   }
   .nav-item {
     margin-bottom: 10px;
   }
-}
 
-@media screen and (min-width: 601px) {
   /* no grid support? */
   .sidebar-nav {
     float: left;
