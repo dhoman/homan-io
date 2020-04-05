@@ -14,6 +14,10 @@ module.exports = function(config) {
   config.addFilter("readableDate", dateObj => {
     return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat("dd LLL yyyy");
   });
+  config.addFilter('photoDescriptor', (imgPath) => {
+    var temp = imgPath.split('/');
+    return temp[temp.length-1].split('.')[0];
+  });
 
   config.addFilter('htmlDateString', (dateObj) => {
     return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('yyyy-LL-dd');

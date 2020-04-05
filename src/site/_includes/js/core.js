@@ -28,6 +28,11 @@ function scale(num, in_min, in_max, out_min, out_max) {
 
 var glitchBgContainerEl = document.getElementById( 'glitch-bg' );
 
+function getPhotoDescriptor(imgPath) {
+  var temp = imgPath.split('/');
+  return temp[temp.length-1].split('.')[0];
+}
+
 function glitchImage(params) {
   loadImage( imagePath, function ( img ) {
     glitch( params )
@@ -36,7 +41,8 @@ function glitchImage(params) {
       .then( function( dataURL ) {
         var imageEl = new Image();
         imageEl.src = dataURL;
-        if(glitchBgContainerEl.childNodes.length) {
+        imageEl.alt = 'A glitched photo of ' + getPhotoDescriptor(imagePath);
+        if (glitchBgContainerEl.childNodes.length) {
           // we have to remove and replace the image element because if we simply updated the data url there'd be a memory leak
           glitchBgContainerEl.replaceChild(imageEl, glitchBgContainerEl.childNodes[0]);
         } else {
