@@ -9,7 +9,8 @@
     "dev": "cross-env ELEVENTY_ENV=dev eleventy --serve",
     "build": "cross-env ELEVENTY_ENV=prod eleventy",
     "seed": "cross-env ELEVENTY_ENV=seed eleventy",
-    "lighthouse": "node lighthouse.js"
+    "lighthouse": "node ./_lighthouse/lighthouse.js",
+    "lighthouse-html": "node ./_lighthouse/lighthouseHtml.js"
   },
   "repository": {
     "type": "git",

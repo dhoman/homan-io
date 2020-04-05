@@ -3,17 +3,17 @@
     "url": "https://homan.io/",
     "finalUrl": "https://homan.io/",
     "lighthouseScore": 1,
-    "firstContentfulPaint": 859,
-    "firstMeaningfulPaint": 859,
-    "speedIndex": 1615.897850000259,
+    "firstContentfulPaint": 828.68,
+    "firstMeaningfulPaint": 828.68,
+    "speedIndex": 1690.6253940000015,
     "first-contentful-paint": {
       "id": "first-contentful-paint",
       "title": "First Contentful Paint",
       "description": "First Contentful Paint marks the time at which the first text or image is painted. [Learn more](https://web.dev/first-contentful-paint).",
       "score": 1,
       "scoreDisplayMode": "numeric",
-      "numericValue": 859,
-      "displayValue": "0.9 s"
+      "numericValue": 828.68,
+      "displayValue": "0.8 s"
     },
     "first-meaningful-paint": {
       "id": "first-meaningful-paint",
@@ -21,8 +21,8 @@
       "description": "First Meaningful Paint measures when the primary content of a page is visible. [Learn more](https://web.dev/first-meaningful-paint).",
       "score": 1,
       "scoreDisplayMode": "numeric",
-      "numericValue": 859,
-      "displayValue": "0.9 s"
+      "numericValue": 828.68,
+      "displayValue": "0.8 s"
     },
     "speed-index": {
       "id": "speed-index",
@@ -30,8 +30,8 @@
       "description": "Speed Index shows how quickly the contents of a page are visibly populated. [Learn more](https://web.dev/speed-index).",
       "score": 1,
       "scoreDisplayMode": "numeric",
-      "numericValue": 1615.897850000259,
-      "displayValue": "1.6 s"
+      "numericValue": 1690.6253940000015,
+      "displayValue": "1.7 s"
     },
     "screenshot-thumbnails": {
       "id": "screenshot-thumbnails",
@@ -45,43 +45,43 @@
         "items": [
           {
             "timing": 300,
-            "timestamp": 3291204866
+            "timestamp": 6585836240
           },
           {
             "timing": 600,
-            "timestamp": 3291504866
+            "timestamp": 6586136240
           },
           {
             "timing": 900,
-            "timestamp": 3291804866
+            "timestamp": 6586436240
           },
           {
             "timing": 1200,
-            "timestamp": 3292104866
+            "timestamp": 6586736240
           },
           {
             "timing": 1500,
-            "timestamp": 3292404866
+            "timestamp": 6587036240
           },
           {
             "timing": 1800,
-            "timestamp": 3292704866
+            "timestamp": 6587336240
           },
           {
             "timing": 2100,
-            "timestamp": 3293004866
+            "timestamp": 6587636240
           },
           {
             "timing": 2400,
-            "timestamp": 3293304866
+            "timestamp": 6587936240
           },
           {
             "timing": 2700,
-            "timestamp": 3293604866
+            "timestamp": 6588236240
           },
           {
             "timing": 3000,
-            "timestamp": 3293904866
+            "timestamp": 6588536240
           }
         ]
       }
@@ -94,8 +94,8 @@
       "scoreDisplayMode": "informative",
       "details": {
         "type": "screenshot",
-        "timing": 1238,
-        "timestamp": 3292143038
+        "timing": 1292,
+        "timestamp": 6586827864
       }
     },
     "estimated-input-latency": {
@@ -104,26 +104,26 @@
       "description": "Estimated Input Latency is an estimate of how long your app takes to respond to user input, in milliseconds, during the busiest 5s window of page load. If your latency is higher than 50 ms, users may perceive your app as laggy. [Learn more](https://web.dev/estimated-input-latency).",
       "score": 0,
       "scoreDisplayMode": "numeric",
-      "numericValue": 308,
-      "displayValue": "310 ms"
+      "numericValue": 386.40000000000003,
+      "displayValue": "390 ms"
     },
     "total-blocking-time": {
       "id": "total-blocking-time",
       "title": "Total Blocking Time",
       "description": "Sum of all time periods between FCP and Time to Interactive, when task length exceeded 50ms, expressed in milliseconds.",
-      "score": 0.29,
+      "score": 0.23,
       "scoreDisplayMode": "numeric",
-      "numericValue": 819,
-      "displayValue": "820 ms"
+      "numericValue": 916.9999999999999,
+      "displayValue": "920 ms"
     },
     "max-potential-fid": {
       "id": "max-potential-fid",
       "title": "Max Potential First Input Delay",
       "description": "The maximum potential First Input Delay that your users could experience is the duration, in milliseconds, of the longest task. [Learn more](https://developers.google.com/web/updates/2018/05/first-input-delay).",
-      "score": 0.01,
+      "score": 0,
       "scoreDisplayMode": "numeric",
-      "numericValue": 869,
-      "displayValue": "870 ms"
+      "numericValue": 966.9999999999999,
+      "displayValue": "970 ms"
     },
     "time-to-first-byte": {
       "id": "time-to-first-byte",
@@ -131,11 +131,11 @@
       "description": "Time To First Byte identifies the time at which your server sends a response. [Learn more](https://web.dev/time-to-first-byte).",
       "score": 1,
       "scoreDisplayMode": "binary",
-      "numericValue": 131.95299999999997,
-      "displayValue": "Root document took 130 ms",
+      "numericValue": 121.28499999999997,
+      "displayValue": "Root document took 120 ms",
       "details": {
         "type": "opportunity",
-        "overallSavingsMs": -468.047,
+        "overallSavingsMs": -478.71500000000003,
         "headings": [],
         "items": []
       }
@@ -146,8 +146,8 @@
       "description": "First CPU Idle marks the first time at which the page's main thread is quiet enough to handle input.  [Learn more](https://web.dev/first-cpu-idle).",
       "score": 1,
       "scoreDisplayMode": "numeric",
-      "numericValue": 1728,
-      "displayValue": "1.7 s"
+      "numericValue": 1795.6799999999998,
+      "displayValue": "1.8 s"
     },
     "interactive": {
       "id": "interactive",
@@ -155,8 +155,8 @@
       "description": "Time to interactive is the amount of time it takes for the page to become fully interactive. [Learn more](https://web.dev/interactive).",
       "score": 1,
       "scoreDisplayMode": "numeric",
-      "numericValue": 1728,
-      "displayValue": "1.7 s"
+      "numericValue": 1795.6799999999998,
+      "displayValue": "1.8 s"
     },
     "user-timings": {
       "id": "user-timings",
@@ -180,38 +180,38 @@
       "details": {
         "type": "criticalrequestchain",
         "chains": {
-          "80CDB00467DB1C3BFC582F108C4A5D70": {
+          "74BE9A1612868750C495B6CA7C378468": {
             "request": {
               "url": "https://homan.io/",
-              "startTime": 3290.906165,
-              "endTime": 3291.465588,
-              "responseReceivedTime": 3291.4640449999997,
+              "startTime": 6585.53756,
+              "endTime": 6586.139223,
+              "responseReceivedTime": 6586.137017,
               "transferSize": 8192
             },
             "children": {
-              "6656.5": {
+              "7584.5": {
                 "request": {
-                  "url": "blob:https://homan.io/0ceee26c-2bf4-423d-beda-87c33726eb1f",
-                  "startTime": 3291.842598,
-                  "endTime": 3292.057766,
-                  "responseReceivedTime": 3292.057588,
+                  "url": "blob:https://homan.io/6487b276-b752-4222-9179-fafe73dddbaa",
+                  "startTime": 6586.519617,
+                  "endTime": 6586.759655,
+                  "responseReceivedTime": 6586.7595,
                   "transferSize": 0
                 }
               }
             }
           },
-          "6656.6": {
+          "7584.6": {
             "request": {
               "url": "https://homan.io/favicon.ico",
-              "startTime": 3292.060621,
-              "endTime": 3292.178143,
-              "responseReceivedTime": 3292.177452,
+              "startTime": 6586.765063,
+              "endTime": 6586.884285,
+              "responseReceivedTime": 6586.883819,
               "transferSize": 500
             }
           }
         },
         "longestChain": {
-          "duration": 1271.9780000002174,
+          "duration": 1346.7250000003332,
           "length": 1,
           "transferSize": 500
         }
@@ -236,10 +236,10 @@
       "id": "mainthread-work-breakdown",
       "title": "Minimizes main-thread work",
       "description": "Consider reducing the time spent parsing, compiling and executing JS. You may find delivering smaller JS payloads helps with this. [Learn more](https://web.dev/mainthread-work-breakdown)",
-      "score": 0.99,
+      "score": 0.98,
       "scoreDisplayMode": "numeric",
-      "numericValue": 1147.068,
-      "displayValue": "1.1 s",
+      "numericValue": 1259.8879999999995,
+      "displayValue": "1.3 s",
       "details": {
         "type": "table",
         "headings": [
@@ -259,32 +259,32 @@
           {
             "group": "scriptEvaluation",
             "groupLabel": "Script Evaluation",
-            "duration": 663.7159999999998
+            "duration": 718.6599999999996
           },
           {
             "group": "other",
             "groupLabel": "Other",
-            "duration": 305.5120000000002
+            "duration": 365.21999999999997
           },
           {
             "group": "styleLayout",
             "groupLabel": "Style & Layout",
-            "duration": 142.45200000000003
+            "duration": 141.292
           },
           {
             "group": "paintCompositeRender",
             "groupLabel": "Rendering",
-            "duration": 21.516
+            "duration": 20.787999999999993
           },
           {
             "group": "parseHTML",
             "groupLabel": "Parse HTML & CSS",
-            "duration": 8.516
+            "duration": 8.088000000000001
           },
           {
             "group": "scriptParseCompile",
             "groupLabel": "Script Parsing & Compilation",
-            "duration": 5.356
+            "duration": 5.840000000000001
           }
         ]
       }
@@ -295,7 +295,7 @@
       "description": "Consider reducing the time spent parsing, compiling, and executing JS. You may find delivering smaller JS payloads helps with this. [Learn more](https://web.dev/bootup-time).",
       "score": 0.98,
       "scoreDisplayMode": "numeric",
-      "numericValue": 669.0719999999999,
+      "numericValue": 724.5,
       "displayValue": "0.7 s",
       "details": {
         "type": "table",
@@ -327,19 +327,19 @@
         "items": [
           {
             "url": "Other",
-            "total": 655.1960000000003,
-            "scripting": 174.77199999999996,
-            "scriptParseCompile": 2.428
+            "total": 758.0919999999999,
+            "scripting": 219.75599999999997,
+            "scriptParseCompile": 2.948
           },
           {
             "url": "https://homan.io/",
-            "total": 491.87199999999996,
-            "scripting": 488.94399999999996,
-            "scriptParseCompile": 2.928
+            "total": 501.79600000000005,
+            "scripting": 498.90400000000005,
+            "scriptParseCompile": 2.8920000000000003
           }
         ],
         "summary": {
-          "wastedMs": 669.0719999999999
+          "wastedMs": 724.5
         }
       }
     },
@@ -401,18 +401,18 @@
             "numScripts": 0,
             "numStylesheets": 0,
             "numFonts": 0,
-            "numTasks": 162,
+            "numTasks": 163,
             "numTasksOver10ms": 2,
             "numTasksOver25ms": 2,
             "numTasksOver50ms": 1,
             "numTasksOver100ms": 1,
             "numTasksOver500ms": 0,
-            "rtt": 120.406,
-            "throughput": 3083303.623476998,
-            "maxRtt": 120.406,
-            "maxServerLatency": 0,
+            "rtt": 120.60499999999999,
+            "throughput": 3131294.113632879,
+            "maxRtt": 120.60499999999999,
+            "maxServerLatency": 0.6799999999999784,
             "totalByteWeight": 92389,
-            "totalTaskTime": 286.7669999999999,
+            "totalTaskTime": 314.97199999999987,
             "mainDocumentTransferSize": 8192
           }
         ]
@@ -479,7 +479,7 @@
           {
             "url": "https://homan.io/",
             "startTime": 0,
-            "endTime": 559.4230000001517,
+            "endTime": 601.6630000003715,
             "transferSize": 8192,
             "resourceSize": 21438,
             "statusCode": 200,
@@ -488,8 +488,8 @@
           },
           {
             "url": "https://homan.io/images/waterfall.jpg",
-            "startTime": 578.6510000002636,
-            "endTime": 932.0270000002893,
+            "startTime": 620.6620000002658,
+            "endTime": 978.2050000003437,
             "transferSize": 83697,
             "resourceSize": 83344,
             "statusCode": 200,
@@ -497,9 +497,9 @@
             "resourceType": "Image"
           },
           {
-            "url": "blob:https://homan.io/0ceee26c-2bf4-423d-beda-87c33726eb1f",
-            "startTime": 936.4330000003065,
-            "endTime": 1151.6010000000279,
+            "url": "blob:https://homan.io/6487b276-b752-4222-9179-fafe73dddbaa",
+            "startTime": 982.057000000168,
+            "endTime": 1222.0950000000812,
             "transferSize": 0,
             "resourceSize": 2156,
             "statusCode": 200,
@@ -508,8 +508,8 @@
           },
           {
             "url": "https://homan.io/favicon.ico",
-            "startTime": 1154.4560000002093,
-            "endTime": 1271.9780000002174,
+            "startTime": 1227.5030000000697,
+            "endTime": 1346.7250000003332,
             "transferSize": 500,
             "resourceSize": 284,
             "statusCode": 404,
@@ -517,10 +517,10 @@
             "resourceType": "Other"
           },
           {
-            "startTime": 1176.9429999999375,
-            "endTime": 1177.110999999968,
+            "startTime": 1251.7680000000837,
+            "endTime": 1252.2100000005594,
             "transferSize": 0,
-            "resourceSize": 20043,
+            "resourceSize": 60828,
             "statusCode": 200,
             "mimeType": "image/jpeg",
             "resourceType": "Image"
@@ -534,7 +534,7 @@
       "description": "Network round trip times (RTT) have a large impact on performance. If the RTT to an origin is high, it's an indication that servers closer to the user could improve performance. [Learn more](https://hpbn.co/primer-on-latency-and-bandwidth/).",
       "score": null,
       "scoreDisplayMode": "informative",
-      "numericValue": 120.406,
+      "numericValue": 120.60499999999999,
       "displayValue": "120 ms",
       "details": {
         "type": "table",
@@ -554,7 +554,7 @@
         "items": [
           {
             "origin": "https://homan.io",
-            "rtt": 120.406
+            "rtt": 120.60499999999999
           }
         ]
       }
@@ -565,7 +565,7 @@
       "description": "Server latencies can impact web performance. If the server latency of an origin is high, it's an indication the server is overloaded or has poor backend performance. [Learn more](https://hpbn.co/primer-on-web-performance/#analyzing-the-resource-waterfall).",
       "score": null,
       "scoreDisplayMode": "informative",
-      "numericValue": 0,
+      "numericValue": 0.6799999999999784,
       "displayValue": "0 ms",
       "details": {
         "type": "table",
@@ -585,7 +585,7 @@
         "items": [
           {
             "origin": "https://homan.io",
-            "serverResponseTime": 0
+            "serverResponseTime": 0.6799999999999784
           }
         ]
       }
@@ -615,16 +615,16 @@
         ],
         "items": [
           {
-            "duration": 5.807,
-            "startTime": 569.067
+            "duration": 6.26,
+            "startTime": 611.611
           },
           {
-            "duration": 39.454,
-            "startTime": 588.518
+            "duration": 38.852,
+            "startTime": 631.214
           },
           {
-            "duration": 217.151,
-            "startTime": 938.85
+            "duration": 241.869,
+            "startTime": 985.172
           }
         ]
       }
@@ -635,40 +635,40 @@
       "description": "Collects all available metrics.",
       "score": null,
       "scoreDisplayMode": "informative",
-      "numericValue": 1728,
+      "numericValue": 1795.6799999999998,
       "details": {
         "type": "debugdata",
         "items": [
           {
-            "firstContentfulPaint": 859,
-            "firstMeaningfulPaint": 859,
-            "firstCPUIdle": 1728,
-            "interactive": 1728,
-            "speedIndex": 1616,
-            "estimatedInputLatency": 308,
-            "totalBlockingTime": 819,
+            "firstContentfulPaint": 829,
+            "firstMeaningfulPaint": 829,
+            "firstCPUIdle": 1796,
+            "interactive": 1796,
+            "speedIndex": 1691,
+            "estimatedInputLatency": 386,
+            "totalBlockingTime": 917,
             "observedNavigationStart": 0,
-            "observedNavigationStartTs": 3290904866,
-            "observedFirstPaint": 742,
-            "observedFirstPaintTs": 3291646719,
-            "observedFirstContentfulPaint": 742,
-            "observedFirstContentfulPaintTs": 3291646719,
-            "observedFirstMeaningfulPaint": 742,
-            "observedFirstMeaningfulPaintTs": 3291646719,
-            "observedLargestContentfulPaint": 742,
-            "observedLargestContentfulPaintTs": 3291646719,
-            "observedTraceEnd": 2160,
-            "observedTraceEndTs": 3293064967,
-            "observedLoad": 1096,
-            "observedLoadTs": 3292000496,
-            "observedDomContentLoaded": 584,
-            "observedDomContentLoadedTs": 3291488481,
-            "observedFirstVisualChange": 654,
-            "observedFirstVisualChangeTs": 3291558866,
-            "observedLastVisualChange": 1238,
-            "observedLastVisualChangeTs": 3292142866,
-            "observedSpeedIndex": 934,
-            "observedSpeedIndexTs": 3291838829
+            "observedNavigationStartTs": 6585536240,
+            "observedFirstPaint": 779,
+            "observedFirstPaintTs": 6586315690,
+            "observedFirstContentfulPaint": 779,
+            "observedFirstContentfulPaintTs": 6586315690,
+            "observedFirstMeaningfulPaint": 779,
+            "observedFirstMeaningfulPaintTs": 6586315690,
+            "observedLargestContentfulPaint": 779,
+            "observedLargestContentfulPaintTs": 6586315690,
+            "observedTraceEnd": 2216,
+            "observedTraceEndTs": 6587751963,
+            "observedLoad": 1152,
+            "observedLoadTs": 6586687812,
+            "observedDomContentLoaded": 626,
+            "observedDomContentLoadedTs": 6586161961,
+            "observedFirstVisualChange": 691,
+            "observedFirstVisualChangeTs": 6586227240,
+            "observedLastVisualChange": 1291,
+            "observedLastVisualChangeTs": 6586827240,
+            "observedSpeedIndex": 1001,
+            "observedSpeedIndexTs": 6586537657
           },
           {
             "lcpInvalidated": false
@@ -854,7 +854,7 @@
             "totalBytes": 500
           },
           {
-            "url": "blob:https://homan.io/0ceee26c-2bf4-423d-beda-87c33726eb1f",
+            "url": "blob:https://homan.io/6487b276-b752-4222-9179-fafe73dddbaa",
             "totalBytes": 0
           }
         ]
