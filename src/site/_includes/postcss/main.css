@@ -32,9 +32,9 @@ body {
 .content ul li {
    text-indent: 0px;
 }
-.content:hover {
+/* .content:hover {
   background: rgba(0, 0, 0, .75);
-}
+} */
 /*
  p,
  .tmpl-post li,

@@ -91,6 +91,7 @@ module.exports = function(config) {
   config.addPassthroughCopy("./src/site/images");
   config.addPassthroughCopy({"src/site/_optimized_images/*.(jpg|webp)": "images"});
   config.addPassthroughCopy("./src/site/files");
+  config.addPassthroughCopy("./src/site/admin");
   config.setDataDeepMerge(true);
 
   return {
