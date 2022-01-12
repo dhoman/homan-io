@@ -29,7 +29,7 @@
     "html-minifier": "^4.0.0",
     "jquery": "^3.4.0",
     "luxon": "^1.21.3",
-    "markdown-it": "^8.4.2",
+    "markdown-it": "^12.3.2",
     "markdown-it-anchor": "^5.2.5",
     "postcss": "^7.0.17",
     "postcss-color-mix": "^1.1.0",
