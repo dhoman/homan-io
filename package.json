@@ -47,7 +47,7 @@
     "fs-extra": "^8.1.0",
     "lighthouse": "^5.6.0",
     "path": "^0.12.7",
-    "sharp": "^0.25.2"
+    "sharp": "^0.30.5"
   },
   "resolutions": {
     "terser": "3.14.*"
