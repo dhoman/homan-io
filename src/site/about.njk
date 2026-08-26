@@ -9,7 +9,7 @@ navtitle: About
 
 <h1>About</h1>
 <p>
-  Opinionated developer who prefers Visual Studio Code, Vim, 2 spaces over tabs (although project consistency trumps personal preference)
+  Opinionated developer who prefers Visual Studio Code, Vim, 2 spaces over tabs (although project consistency over personal preference)
 </p>
 <p>
   Likes good coffee, asking or answering good questions, good whiskey, and good company
@@ -22,21 +22,68 @@ navtitle: About
 </p>
 
 <h3>Projects</h3>
+
+  
 <p>
-  DollarGamePicks 
+  <b>AgentInbox</b>
   <br/>
-  (now defunct) was my first side project. One of my friends who I worked with used to do online sports gambling. For a dollar we'd give you a report of who we thought was going to win against the line. If we were wrong, you got another token to purchase another report.
+  It's an inbox for my hermes agents. It's several scripts to scrape youtube videos, discord posts / messages, podcasts. Then transcribe, summarize and feed this information to other agents and me. Topics include: fantasy football, business, ai, music theory, stocks
+  <br/>
+
+  Most of these scripts I run on my machine. The download scripts are just python with throttling depending on the source, the transcription script runs  mlx-community/whisper-large-v3-turbo on my machine. And the Diarization script is FluidInference/speaker-diarization-coreml.
+  <br/>
+
+  I use feeds for sources, then json objects for tracking tags, insights and other data. I don't know how comfortable I feel sharing the schema or info. But it's a fun project, and I highly encourge others to make their own AgentInboxes. The project is hierarchical, so podcasts, transcripts are all in various folders. I'll probably eventually make a frontend for it just so I can more easily browse / find things in it, this repo is already like 60+ gigs though and uses git-lfs. 
+</p>
+<p>
+  <b>Base Stack</b>
+  <br/>
+  Git Template for a basic next.js app with all the boilerplate code I need to get up and running quickly. I'ts AI native (meaning I've written it all with AI with AI first), and has good documentation so I can also find / navigate and make sense of it all.
+  <br/>
+  Includes some additions such as git workflows to cause commits to main to auto create PRs on downstream apps, git workflows to auto trigger claude to code review PRs, ways to trigger claude from PRs and comments.
+  <br/>
+  As well as a way for PRs on downstream apps to create issues with /upstream commands to create issues on the base-stack application (which get picked up by an agent). This allows one to easily fold in changes into base-stack that belong there when a bug or feature discovered in a downstream app should exisit in the upstream app.
+</p>
+<p>
+  <b>Eunomia.app</b>
+  <br/>
+  A suite of agents that helps one discover, evaluate and execute business ideas.
+  <br/>
+    Durable LangGraph orchestration state machine on Convex that
+    plans specialist work, requests human approval, dispatches parallel research
+    waves, joins asynchronous results, and resumes from persisted checkpoints 
+  <br/>
+    Made execution replay-safe through atomically idempotent wave dispatch
+    and a deterministic completion coordinator, preventing duplicate specialist
+    jobs or continuation turns during retries and concurrent completions
+  <br/>
+  Six specialist agents perform web-grounded market, financial, legal,
+  planning, go-to-market, and evaluation work; outputs are stored as versioned
+  artifacts and scorecards and streamed back into the originating conversation
+</p>
+<p>
+  <b>Stonks</b>
+  <br/>
+  Personal project (can't share code, resale data, share access, or charge for platform without breaking my license agreement; sorry in advance.) But it's essentially an ETL (Extract Transform Load) program to load data from unusualwhales.com options flow. Identify trades that might be indicivative of an insider trade, then trade. 
+  <br/>
+  That's the idea, but I've been too scared to turn it on. I built a whole platform for agents to be able to perform backtesting, papertrading, and track performance of multiple strategies at once (Even including an AST to sanitize python code!) But I know nothing about strategies, and didn't want agents to create bad strategies (despite all the testing / verification in place)
+  <br/>
+  My current breakthough / thing I'm working on with it, is I realized others are doing this. And probably have talked about it, so I looked into podcasts, discovered a couple (including finding out unusualwhales has one), and have been feeding it into AgentInbox. Haven't setup an appropriate hermes agent for analyzing these transcripts yet (and fantasy football daft is this week, so this is a next week endeavour) 
+</p>
+<p>
+  <b>DollarGamePicks(now defunct)</b> 
+  <br/>
+   Wwas my first side project. One of my friends who I worked with used to do online sports gambling. For a dollar we'd give you a report of who we thought was going to win against the line. If we were wrong, you got another token to purchase another report.
   <br/>
   He and another wrote the database for parsing the nfl game data, I wrote the website (angular, node). This was really my first 'real' side project. But it failed miserably as none of us knew marketing.
 </p>
 <p>
-  Frigg.io
+  <b>Frigg.io (now defunct)</b>
   <br/>
   A better wedding planning app. You sign up, get a phone number tied to your event. You send everyone a message from said number (easily) and it gives them event info, help information, lets them send you photos and videos they took. 
   <br/>
   Last minute change? no problem, frigg.io lets you send updates to everyone, certain groups (ie wedding party, family, etc) of people, gather responses (ie are you going to be at the ceremony and/or reception, meal choices, etc).
   <br/>
-  This is a solo project, and my current time sink
 </p>
 
 
