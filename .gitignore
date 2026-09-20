@@ -19,3 +19,6 @@ src/site/_includes/css
 
 # Local-only notes (not for the public repo)
 hosting-notes.md
+
+# Glitch experiments live in the separate ~/Source/glitch-lab repository.
+/glitch-lab/
