@@ -17,6 +17,8 @@ and...
 
 I like to do things besides work when I'm not at work
 
+<div class="glitch-trigger"></div>
+
 ## The Problem
 
 I have a lot of side projects, I'm really close to getting done with one of them. But I get distracted and start or research new ones all the time.
@@ -29,11 +31,15 @@ I also have a half dozen things I want to write about here. But you are probably
 
 I spent a lot of time rewriting this section, but essentially there are two options: I can keep up my bad habits or I can work on wrapping up some of these tasks on my list of big item things I want to get done.
 
+<div class="glitch-trigger"></div>
+
 ## The Why
 
 This post wasn't one of the posts I wanted to write, but I felt like I needed to write this one to keep myself accountable to myself.
 
 A book full of ideas is no better than a head full of an ideas. The goal is to be one step closer to knowing if this side project was a good idea. And moving onto the next idea until I find one that is.
+
+<div class="glitch-trigger"></div>
 
 ## The Goal
 

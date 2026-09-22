@@ -22,6 +22,8 @@ What that means is that a lot of the questions should be taken with a grain of s
 
 For instance. If someone were to ask if you liked dogs... chances are they have a dog policy and are trying to filter people who like and don't like dogs. Now this is important, because if you don't like them but don't mind them that's one thing. But if you were allergic there is absolutely no reason to lie about it.
 
+<div class="glitch-trigger"></div>
+
 ## The Tactic
 
 The biggest takeaway from this post is to question why they are asking a question and then provide an answer that characterizes you as someone who is willing or motivated to solve their problems while being honest.
@@ -34,6 +36,8 @@ There is absolutely no reason to lie, but answering a question saying that you d
 
 * Do you like dealing with legacy code? - This means that they have a lot of legacy code... sample response would be "no, but I understand that all code eventually becomes legacy code and often times legacy code is where one can find all the business rules of how the company operates"
 * How do you manage stress / do you get stressed easily - this means they have a stressful environment, everybody gets stressed but want they want to see is you list some good stress management techniques
+
+<div class="glitch-trigger"></div>
 
 ## Q&A
 
@@ -67,6 +71,8 @@ Talk it out, even if you don't know the answer explain that you don't know but t
 Like the earlier question examples, you do yourself no good if you provide a simple answer "no" or "I don't know."
 
 There is nothing wrong though with starting off with "I don't know" then following it up with giving your best guess as that shows that even if you don't know will give a stab at tackling the problem and shows that you have humility and are honest about your abilities and communication.
+
+<div class="glitch-trigger"></div>
 
 ## End
 

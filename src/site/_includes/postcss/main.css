@@ -8,7 +8,7 @@
   --moon-gray: #CCCCCC;
   --near-black: #111111;
   --black: #000000;
-  --blue: #357EDD;
+  --blue: #4A8FE6; /* was #357EDD; nudged lighter for contrast on the dark boxes */
   --light-blue: #96CCFF;
   --near-white: #F4F4F4;
 }
@@ -253,6 +253,9 @@ a[href].direct-link:focus:visited,
   top: 0px;
   overflow: hidden;
 }
+div.glitch-trigger {
+  height: 1px;
+}
 #glitch-bg img {
   position: fixed;
   /* width: 1024px; */
@@ -296,8 +299,34 @@ header.header {
 @media screen and (max-width: 600px) {
   .nav {
     flex-direction: row;
+    justify-content: center;
+    gap: 1em;
+    float: none; /* the global .nav rule floats it left, which defeats centering */
     margin-bottom: 0px;
     margin-top: 0px;
+  }
+  .nav-item {
+    margin-right: 0; /* spacing comes from gap above */
+  }
+  ul.nav li.nav-item a {
+    border: 2px solid transparent; /* the global rule sets 1px; a touch more breathing room on mobile */
+    background: rgba(255, 255, 255, .25); /* lighter chips on the dark sticky bar */
+  }
+  /* single-column layout: the nav cell is only as tall as the list, so stick the
+     nav itself (its parent is the whole wrapper) instead of the ul inside it */
+  /* .wrapper > .sidebar-nav rather than .sidebar-nav so this outranks the later
+     .wrapper > * rule, which would otherwise reset z-index and padding */
+  .wrapper > .sidebar-nav {
+    position: sticky;
+    top: 0;
+    z-index: 3; /* above the content boxes, which are grid items with z-index 2 */
+    padding: 8px 0;
+    /* every other grid item gets 20px side padding from .wrapper > *, so the
+       header and post boxes start 20px in; inset the bar to line up with them */
+    margin: 0 20px;
+    /* darker than the .75 the buttons use so the bar reads as one surface;
+       desktop has no container background at all */
+    background: rgba(0, 0, 0, .9);
   }
   #glitch-bg img {
     right: -300px;

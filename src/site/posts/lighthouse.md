@@ -36,6 +36,8 @@ npm install --save-dev chrome-launcher fast-glob fs-extra lighthouse
 
 or copy paste the above (then run a 'npm install'), but either way you are going to have to manually add the scripts for lighthouse and lighthouse-html to your package.json
 
+<div class="glitch-trigger"></div>
+
 Now these commands are going to be looking for a couple of files in a '_lighthouse' folder that you are going to have create
 you could just copy paste the folder from my <a href="https://github.com/dhoman/homan-io/tree/master/_lighthouse">repo</a>repo or I'll lay out the files and their contents below
 
@@ -230,6 +232,8 @@ async function runLighthouse(urls) {
 })();
 ```
 
+<div class="glitch-trigger"></div>
+
 Just one more file and two more folders, by default this will load and save the results in nested folders in the _lighthouse folder... so you are going to have to make a folder in _lighthouse called sites and another one called results
 
 Once you have that done you are ready to make the final file to get this working
@@ -244,6 +248,8 @@ Once you have that done you are ready to make the final file to get this working
 
 If it isn't obvious, you are going to want to change the name of that file and the contents of that file to point to your website, the only info that is important is the url (the original script had more info but they are not relevant for our purposes)
 
+
+<div class="glitch-trigger"></div>
 
 Now, once you have this setup, you can run 
 

@@ -1,6 +1,6 @@
 <ol class="postlist">
 {% for post in postslist | reverse %}
-  <li class="postlist-item{% if post.url == url %} postlist-item-active{% endif %}">
+  <li class="postlist-item{% if post.url == url %} postlist-item-active{% endif %}{% if glitchTriggers and loop.index <= 3 %} glitch-trigger{% endif %}">
     <a href="{{ post.url | url }}" class="postlist-link">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a>
     <time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
     {% for tag in post.data.tags %}

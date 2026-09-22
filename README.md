@@ -73,6 +73,28 @@ bgimg: /images/panda.jpg
 ---
 ```
 
+### Glitch triggers in a post
+
+The background image glitches when the tab loses focus, and also the first time the reader
+scrolls any element with the class `glitch-trigger` into view. Markdown passes raw HTML
+through, so drop a marker wherever you want it to fire:
+
+```markdown
+Some paragraph that sets things up.
+
+<div class="glitch-trigger"></div>
+
+## The next section
+```
+
+Each trigger fires once. Nothing is set up until the reader actually scrolls, so it has no
+effect on page-load scores (Lighthouse / Speedlify). The logic lives in
+`src/site/_includes/js/core.js`.
+
+Pages using `layouts/home.njk` (home, archive, tag pages) set `glitchTriggers: true` in the
+layout's front matter, which makes the first three items in the post list triggers, so no
+markers are needed there.
+
 `bgimg` is optional — `base.njk` falls back to `waterfall.jpg` if you leave it out.
 
 ### Adding a new background image

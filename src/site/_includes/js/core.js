@@ -58,6 +58,62 @@ addEvent(window, 'blur', function(event) {
   }
 });
 
+// Scroll triggers: any element with class "glitch-trigger" fires one glitch the
+// first time it passes through the middle band of the viewport. Nothing is set up
+// until the user actually scrolls, so page load (and Lighthouse/Speedlify) never
+// pays for this.
+var GLITCH_GAP_MS = 900;       // minimum time between scroll-triggered glitches
+var pendingGlitches = 0;
+var glitchTimer = null;
+
+function drainGlitchQueue() {
+  if (glitchTimer || pendingGlitches <= 0) {
+    return;
+  }
+  pendingGlitches--;
+  if (doneLoading) {
+    glitchImage(getRandomParams());
+  }
+  glitchTimer = setTimeout(function() {
+    glitchTimer = null;
+    drainGlitchQueue();
+  }, GLITCH_GAP_MS);
+}
+
+function queueGlitch() {
+  pendingGlitches++;
+  drainGlitchQueue();
+}
+
+function setupScrollTriggers() {
+  var triggers = document.querySelectorAll('.glitch-trigger');
+  if (!triggers.length || !('IntersectionObserver' in window)) {
+    return;
+  }
+  var observer = new IntersectionObserver(function(entries) {
+    for (var i = 0; i < entries.length; i++) {
+      if (entries[i].isIntersecting) {
+        observer.unobserve(entries[i].target);
+        queueGlitch();
+      }
+    }
+  }, {
+    // shrink the root to the middle 50% of the viewport so a trigger fires as it
+    // scrolls through the centre, not the moment it peeks in at the bottom
+    rootMargin: '-25% 0px -25% 0px',
+    threshold: 0
+  });
+  for (var i = 0; i < triggers.length; i++) {
+    observer.observe(triggers[i]);
+  }
+}
+
+function onFirstScroll() {
+  window.removeEventListener('scroll', onFirstScroll);
+  setupScrollTriggers();
+}
+window.addEventListener('scroll', onFirstScroll, { passive: true });
+
 function getRandomParams() {
   var params = {
     amount:     scale(Math.random(), 0, 1, 10, 60),
