@@ -6,7 +6,7 @@ tags:
   - random
   - planning
 layout: layouts/post.njk
-bg-image: panda.jpg
+bgimg: /images/panda.jpg
 ---
 
 ## Realizations

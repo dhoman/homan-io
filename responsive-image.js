@@ -5,14 +5,12 @@ const path = require("path");
 
 module.exports = async function(file_name, outputPath, passThroughFolder = '') {
   const { name: filename, ext } = path.parse(file_name);
-  console.log(JSON.stringify({filename, ext, outputPath, file_name, passThroughFolder}));
   let webpSrcSet = "";
   const srcSet = [];
     // origSrcSet = "";
 
   try {
     const sharpImage = sharp(path.resolve(file_name));
-    console.log(path.resolve(file_name));
     const { width } = await sharpImage.metadata();
 
     const maxWidth = 800;
@@ -33,6 +31,7 @@ module.exports = async function(file_name, outputPath, passThroughFolder = '') {
     for (const outputWidth of outputWidths) {
       await sharpImage
         .clone()
+        .rotate() // apply EXIF orientation before resizing (resize strips the tag)
         .resize({ width: outputWidth })
         .toFile(
           path.resolve(outputPath, `${filename}_${outputWidth}${ext}`)
@@ -42,6 +41,7 @@ module.exports = async function(file_name, outputPath, passThroughFolder = '') {
       // origSrcSet += `${filename}_${outputWidth}${ext} ${outputWidth}w,`;
       await sharpImage
         .clone()
+        .rotate() // apply EXIF orientation before resizing (resize strips the tag)
         .resize({ width: outputWidth })
         .webp()
         .toFile(

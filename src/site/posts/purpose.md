@@ -6,7 +6,7 @@ tags:
   - deep-thoughts
   - ramble
 layout: layouts/post.njk
-bg-image: panda.jpeg
+bgimg: /images/panda.jpg
 ---
 
 ## Purpose

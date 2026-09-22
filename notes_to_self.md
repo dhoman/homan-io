@@ -1,5 +1,32 @@
 # notes to self
 
+## 2026-09-22 — scroll glitch, sticky mobile nav, image pipeline fixes
+
+Full write-ups are in README.md (sections "Background images", "Optimizing images", "How the
+glitch effect works"). Short version of what changed and why:
+
+- **Glitch now fires on scroll too.** `core.js` creates an IntersectionObserver on the first
+  scroll event (never at load, for Speedlify) over `.glitch-trigger` elements; each fires once
+  as it crosses the middle of the viewport, queued 900ms apart. Posts have 2-3 `<div
+  class="glitch-trigger"></div>` markers at transitions. Home/archive/tag pages get triggers
+  on the first three post-list items via `glitchTriggers: true` in `layouts/home.njk`.
+- **Mobile nav is sticky.** The nav element itself is pinned (the inner `ul` had no room to
+  slide in the single-column layout). Gotcha: `.wrapper > *` sets `z-index: 2` and padding on
+  every grid item and comes later in the file, so the mobile rule uses `.wrapper > .sidebar-nav`
+  to outrank it.
+- **`bgImgFilter` was comparing width suffixes as strings.** With camera file names like
+  `..._all_9544.jpg` the original beat every variant. Now parses the width numerically and caps
+  at `MAX_BG_WIDTH` (1200) so the 1600px variants stay out of the page.
+- **Four posts had broken `bgimg`** (`bg-image` key, or `.jpeg` for a `.jpg` file). Fixed.
+- **`responsive-image.js` applies EXIF rotation** before resizing; three of the new photos
+  were stored sideways with a rotate tag and would have come out sideways.
+- **Optimizer runs on build** via `prebuild` in package.json and skips images that already
+  have variants (existence check, not mtime, because git clones flatten timestamps).
+  `npm run optimize-images -- --force` regenerates all.
+- **25 photos added from glitch-lab** (64MB of originals, committed as is, still using the
+  camera file names). No post points at them yet. Originals are passthrough-copied to dist
+  even though only the optimized variants are referenced; trimming that is a todo.
+
 ## 2026-08-25 — fixed the build on the M-series mac
 
 Everything below in the 2020 section is **obsolete**. `npm install` just works now:

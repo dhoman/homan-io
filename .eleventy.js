@@ -4,14 +4,17 @@ const rssPlugin = require('@11ty/eleventy-plugin-rss');
 const fastglob = require("fast-glob");
 const fs = require("fs-extra");
 
+// Optimized variants are named <name>_<width>.<ext>. Returns the width as a
+// number, or 0 when the file has no width suffix (i.e. it is an original).
 function getWidthFromFilename(filename) {
-  var temp = filename.split('_');
-  if (temp.length) {
-    temp = temp[temp.length-1];
-    return temp.split('.')[0];
-  }
-  return 0;
+  const match = filename.match(/_(\d+)\.[a-z0-9]+$/i);
+  return match ? parseInt(match[1], 10) : 0;
 }
+
+// Largest optimized variant the background image will use. The image renders at
+// 768px tall, so 1200 wide is plenty for 1x and fine for 2x without shipping the
+// 1600px variant (roughly double the bytes).
+const MAX_BG_WIDTH = 1200;
 
 module.exports = function(config) {
   // Layout aliases can make templates more portable
@@ -28,25 +31,31 @@ module.exports = function(config) {
     var temp = imgPath.split('/');
     return temp[temp.length-1].split('.')[0];
   });
+  // Given an original like /images/foo.jpg, return the largest optimized variant
+  // (/images/foo_<width>.jpg) up to MAX_BG_WIDTH, or the original if none exist.
   config.addNunjucksAsyncFilter('bgImgFilter', (imgPath, callback) => {
-    var temp = imgPath.split('/')[imgPath.split('/').length - 1].split('.')[0];
-    var ext = imgPath.split('.')[1];
-    fastglob(`./src/site/_optimized_images/*.${ext}`, {
+    const base = imgPath.split('/').pop();
+    const dot = base.lastIndexOf('.');
+    const name = base.slice(0, dot);
+    const ext = base.slice(dot + 1);
+    fastglob(`./src/site/_optimized_images/${name}_*.${ext}`, {
       caseSensitiveMatch: false
     }).then(globs => {
-      if (globs.length) {
-        var biggest = imgPath;
-        for (var i = 0; i < globs.length; i++) {
-          if (globs[i].includes(temp)) {
-            if (getWidthFromFilename(biggest) < getWidthFromFilename(globs[i])) {
-              biggest = globs[i];
-            }
-          }
+      let best = null;
+      let bestWidth = 0;
+      for (const g of globs) {
+        const w = getWidthFromFilename(g);
+        if (w > bestWidth && w <= MAX_BG_WIDTH) {
+          best = g;
+          bestWidth = w;
         }
-        callback(null, `/images/${biggest.split('_optimized_images/')[1]}`);
       }
-      callback(null, imgPath);
-    });
+      if (best) {
+        callback(null, `/images/${best.split('_optimized_images/')[1]}`);
+      } else {
+        callback(null, imgPath);
+      }
+    }).catch(err => callback(err));
   })
 
   config.addFilter('htmlDateString', (dateObj) => {

@@ -5,7 +5,7 @@ date: 2019-04-12
 tags:
   - business-stuff
 layout: layouts/post.njk
-bg-image: panda.jpeg
+bgimg: /images/panda.jpg
 ---
 
 ## TL;DR; Summary
